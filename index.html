@@ -41,35 +41,39 @@
             padding: 1rem;
             backdrop-filter: blur(10px);
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
         }
 
         .logo {
-            height: 50px;
+            position: absolute; /* Position the logo absolutely */
+            top: 50%; /* Center it vertically */
+            left: 1rem; /* Add space from the left */
+            transform: translateY(-50%); /* Adjust to truly center */
+            height: 50px; /* Set a height for the logo */
         }
 
         nav h1 {
+            display: inline;
             font-size: 1.5rem;
-            margin-left: 1rem;
+            margin-left: 70px; /* Adjust margin for title to account for logo */
         }
 
-        nav ul {
+        /* Desktop Navigation */
+        .desktop-nav {
             list-style: none;
+            float: right;
             display: flex;
         }
 
-        nav ul li {
+        .desktop-nav li {
             margin: 0 1rem;
         }
 
-        nav ul li a {
+        .desktop-nav li a {
             color: #fff;
             text-decoration: none;
         }
 
-        nav ul li a:hover {
+        .desktop-nav li a:hover {
             text-decoration: underline;
             color: #ff9900;
         }
@@ -84,7 +88,7 @@
             top: 100%;
             width: 100%;
             padding: 1rem;
-            z-index: 1;
+            z-index: 1000;
         }
 
         .mobile-nav ul {
@@ -97,11 +101,36 @@
             margin: 0.5rem 0;
         }
 
+        .mobile-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .mobile-nav ul li a:hover {
+            color: #ff9900;
+        }
+
         .hamburger {
             display: none;
-            font-size: 1.5rem;
             cursor: pointer;
-            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+                float: right;
+            }
+
+            .mobile-nav.active {
+                display: flex;
+            }
         }
 
         /* Home Section */
@@ -146,78 +175,30 @@
             padding: 1rem;
             margin-top: auto;
         }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .mobile-nav.active {
-                display: flex;
-            }
-        }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
     <nav>
-        <img src="logo.png" alt="JB Logo" class="logo">
-        <h1>Julius Bett</h1>
-        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
-        </ul>
-        <div class="mobile-nav">
-            <ul>
+        <div class="container">
+            <img src="logo.png" alt="JB Logo" class="logo"> <!-- Logo positioned at the top left -->
+            <h1>Julius Bett</h1>
+            <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+            <ul class="desktop-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
             </ul>
+            <div class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -234,19 +215,12 @@
         </div>
     </main>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>This is a modal popup with more information!</p>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <p>© 2024 Julius Bett. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript for Mobile Navigation and Modal -->
     <script>
         // Function to display greeting based on time of day
         function displayGreeting() {
@@ -265,35 +239,23 @@
             greetingElement.innerText = `${greeting} Welcome to My Personal Website`;
         }
 
-        // Script for the modal
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
+        // Call the displayGreeting function
+        displayGreeting();
 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // Script for mobile navigation
+        // Mobile Navigation Toggle
         const hamburger = document.querySelector('.hamburger');
         const mobileNav = document.querySelector('.mobile-nav');
 
         hamburger.onclick = function() {
             mobileNav.classList.toggle('active');
-        }
+        };
 
-        // Call the displayGreeting function
-        displayGreeting();
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileNav.contains(event.target) && event.target !== hamburger) {
+                mobileNav.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
