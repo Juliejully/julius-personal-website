@@ -38,14 +38,15 @@ nav h1 {
     font-size: 2rem; /* Adjusted font size */
 }
 
+/* Change display to block for vertical list */
 nav ul {
     list-style: none;
-    display: flex; /* Use flexbox to keep items in a row */
-    justify-content: flex-end; /* Align navigation items to the right */
+    display: block; /* Change to block to stack items vertically */
+    margin-top: 1rem; /* Add margin to separate from the heading */
 }
 
 nav ul li {
-    margin: 0 1rem; /* Adjusted margin */
+    margin: 0.5rem 0; /* Adjusted margin for vertical spacing */
     padding: 0.5rem 1rem; /* Padding for the button */
     border: 2px solid #ff9900; /* Border for the button */
     border-radius: 5px; /* Rounded corners for buttons */
@@ -139,7 +140,7 @@ footer {
     }
 
     nav ul li {
-        margin: 0 0.5rem; /* Reduce margin for mobile */
+        margin: 0.5rem 0; /* Keep margin for vertical list */
     }
 
     main h2 {
@@ -156,7 +157,6 @@ footer {
         padding: 0.5rem; /* Less padding for small screens */
     }
 }
-
 
     </style>
 </head>
