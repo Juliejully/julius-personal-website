@@ -6,208 +6,213 @@
     <title>Home - Julius Bett</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+       /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Body Styling */
-        html, body {
-            height: 100%;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            background-image: url('m7.png');
-            background-size: cover;
-            background-position: center;
-        }
+/* Body Styling */
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    background-image: url('m7.png');
+    background-size: cover;
+    background-position: center;
+}
 
-        /* Flex Container for Main Content */
-        .container {
-            flex: 1;
-            width: 90%;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
+/* Flex Container for Main Content */
+.container {
+    flex: 1;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
-        /* Navigation */
-        nav {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #fff;
-            padding: 1rem;
-            backdrop-filter: blur(10px);
-        }
+/* Navigation */
+nav {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    position: relative; /* Added position relative for logo */
+}
 
-        .logo {
-            position: absolute;
-            top: 50%;
-            left: 1rem;
-            transform: translateY(-50%);
-            height: 50px;
-        }
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    height: 50px;
+}
 
-        nav h1 {
-            display: inline;
-            font-size: 1.5rem;
-            margin-left: 70px;
-        }
+nav h1 {
+    display: inline;
+    font-size: 1.5rem;
+    margin-left: 70px;
+}
 
-        nav ul {
-            list-style: none;
-            float: right;
-            display: flex; /* Use flexbox for horizontal arrangement */
-            align-items: center; /* Center items vertically */
-        }
+nav ul {
+    list-style: none;
+    float: right; /* Align to the right */
+    display: flex; /* Use flexbox for horizontal arrangement */
+    align-items: center; /* Center items vertically */
+}
 
-        nav ul li {
-            margin: 0 1rem;
-        }
+nav ul li {
+    margin: 0 1rem;
+}
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5rem 1rem; /* Add padding to buttons */
-            border-radius: 5px; /* Rounded corners */
-            transition: background 0.3s ease;
-        }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Add padding to buttons */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease;
+}
 
-        nav ul li a:hover {
-            background: rgba(255, 153, 0, 0.5); /* Highlight on hover */
-            text-decoration: underline;
-        }
+nav ul li a:hover {
+    background: rgba(255, 153, 0, 0.5); /* Highlight on hover */
+    text-decoration: underline;
+}
 
-        /* Home Section */
-        main {
-            background: rgba(244, 244, 244, 0.8);
-            padding: 4rem 0;
-            text-align: center;
-            backdrop-filter: blur(5px);
-        }
+/* Home Section */
+main {
+    background: rgba(244, 244, 244, 0.8);
+    padding: 4rem 0;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
 
-        main h2 {
-            font-size: 2.5rem;
-            color: #333;
-        }
+main h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
 
-        main p {
-            margin: 1rem 0;
-            font-size: 1.2rem;
-        }
+main p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
 
-        .buttons .button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            margin: 1rem;
-            background: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
+.buttons .button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
 
-        .button:hover {
-            background: #555;
-            transform: scale(1.05);
-        }
+.button:hover {
+    background: #555;
+    transform: scale(1.05);
+}
 
-        /* Footer */
-        footer {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: auto;
-        }
+/* Footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            nav h1 {
-                font-size: 1.2rem;
-            }
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 1.2rem;
+    }
 
-            nav ul li {
-                margin: 0 0.5rem;
-            }
+    nav ul {
+        justify-content: flex-end; /* Align to the end */
+    }
 
-            main h2 {
-                font-size: 2rem;
-            }
+    nav ul li {
+        margin: 0 0.5rem;
+    }
 
-            main p {
-                font-size: 1rem;
-            }
+    main h2 {
+        font-size: 2rem;
+    }
 
-            .buttons .button {
-                padding: 0.5rem 1rem;
-                margin: 0.5rem;
-            }
+    main p {
+        font-size: 1rem;
+    }
 
-            footer {
-                font-size: 0.9rem;
-            }
-        }
+    .buttons .button {
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+    }
 
-        @media (max-width: 480px) {
-            nav h1 {
-                font-size: 1rem;
-            }
+    footer {
+        font-size: 0.9rem;
+    }
+}
 
-            main h2 {
-                font-size: 1.5rem;
-            }
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 1rem;
+    }
 
-            main p {
-                font-size: 0.9rem;
-            }
+    main h2 {
+        font-size: 1.5rem;
+    }
 
-            .buttons .button {
-                padding: 0.4rem 0.8rem;
-                margin: 0.3rem;
-            }
+    main p {
+        font-size: 0.9rem;
+    }
 
-            footer {
-                font-size: 0.8rem;
-            }
-        }
+    .buttons .button {
+        padding: 0.4rem 0.8rem;
+        margin: 0.3rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
     </style>
 </head>
 <body>
