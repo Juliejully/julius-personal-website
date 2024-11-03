@@ -40,21 +40,20 @@
             color: #fff;
             padding: 1rem;
             backdrop-filter: blur(10px);
-            position: relative;
         }
 
         .logo {
-            position: absolute; /* Position the logo absolutely */
-            top: 50%; /* Center it vertically */
-            left: 1rem; /* Add space from the left */
-            transform: translateY(-50%); /* Adjust to truly center */
-            height: 50px; /* Set a height for the logo */
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            height: 50px;
         }
 
         nav h1 {
             display: inline;
             font-size: 1.5rem;
-            margin-left: 70px; /* Adjust margin for title to account for logo */
+            margin-left: 70px;
         }
 
         nav ul {
@@ -75,39 +74,6 @@
         nav ul li a:hover {
             text-decoration: underline;
             color: #ff9900;
-        }
-
-        /* Mobile Navigation */
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            background-color: rgba(51, 51, 51, 0.9);
-            right: 0;
-            top: 100%;
-            width: 100%;
-            padding: 1rem;
-            z-index: 1000; /* Ensures dropdown is on top */
-        }
-
-        .mobile-nav ul {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .mobile-nav ul li {
-            margin: 0.5rem 0;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        /* Show mobile nav when active */
-        .mobile-nav.active {
-            display: flex;
         }
 
         /* Home Section */
@@ -153,21 +119,49 @@
             margin-top: auto;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
             nav h1 {
                 font-size: 1.2rem;
             }
 
-            nav ul {
-                display: none; /* Hide desktop nav on mobile */
-            }
-
-            .hamburger {
-                display: block;
-                font-size: 1.5rem;
-                float: right;
-                cursor: pointer;
+            nav ul li {
+                margin: 0 0.5rem;
             }
 
             main h2 {
@@ -217,23 +211,14 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <img src="logo.png" alt="JB Logo" class="logo"> <!-- Logo positioned at the top left -->
+            <img src="logo.png" alt="JB Logo" class="logo">
             <h1>Julius Bett</h1>
-            <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
             </ul>
-            <div class="mobile-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="contact.html">Contact Me</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
@@ -298,14 +283,6 @@
             if (event.target == modal) {
                 modal.style.display = "none";
             }
-        }
-
-        // Script for mobile navigation dropdown
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        hamburger.onclick = function() {
-            mobileNav.classList.toggle('active'); // Toggle visibility on click
         }
 
         // Call the displayGreeting function
