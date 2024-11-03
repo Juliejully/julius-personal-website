@@ -1,0 +1,111 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+html, body {
+    height: 100%; /* Set full height for body */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Use flexbox to align items vertically */
+}
+
+/* Flex Container for Main Content */
+.container {
+    flex: 1; /* Allow the container to grow and take up available space */
+    display: flex; /* Use flexbox to align items */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 90%; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 0 1rem; /* Add padding to the container */
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav .logo {
+    width: 50px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 1rem; /* Space between logo and title */
+}
+
+nav h1 {
+    display: inline;
+    margin-right: auto; /* Push the title to the left */
+}
+
+nav ul {
+    list-style: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Home Section */
+.blurred-background {
+    background-image: url('m7.png'); /* Set your background image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    position: relative; /* Allow positioning of pseudo-elements */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow for blur effect */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text alignment */
+}
+
+/* Blurred Overlay */
+.blurred-background::before {
+    content: ''; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+    bottom: 0; /* Align to bottom */
+    background: rgba(255, 255, 255, 0.5); /* Light white overlay */
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    z-index: 1; /* Keep it below the text */
+}
+
+/* Buttons */
+.buttons .button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Push the footer to the bottom */
+}

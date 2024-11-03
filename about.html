@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Julius Bett</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        html, body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4; /* Light background color */
+            height: 100%; /* Set full height for body */
+            display: flex;
+            flex-direction: column; /* Use flexbox to align items vertically */
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center items vertically */
+        }
+
+        nav img {
+            height: 50px; /* Set a specific height for the logo */
+            margin-right: 1rem; /* Space between logo and title */
+        }
+
+        nav h1 {
+            display: inline;
+            font-size: 1.8rem; /* Font size for the title */
+        }
+
+        nav ul {
+            list-style: none;
+            margin-left: auto; /* Push the navigation links to the right */
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s; /* Transition for link color */
+        }
+
+        nav ul li a:hover {
+            color: #ff9900; /* Change color on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Main Section */
+        main {
+            flex: 1; /* Allow the main section to grow */
+            padding: 2rem;
+            text-align: center;
+            background: white; /* White background for content */
+        }
+
+        main h2 {
+            font-size: 3rem; /* Increased font size for the main title */
+            margin-bottom: 1rem; /* Space below heading */
+            color: #333; /* Color for the title */
+            text-transform: uppercase; /* Make title uppercase */
+            font-weight: bold; /* Bold font for the title */
+        }
+
+        /* Story Panels */
+        .story-panel {
+            border: 1px solid #ccc; /* Border around panels */
+            border-radius: 10px; /* Rounded corners */
+            margin: 20px 0; /* Margin between panels */
+            padding: 20px; /* Padding inside panels */
+            background-color: #fff; /* White background for panels */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            transition: transform 0.3s; /* Animation for hover effect */
+        }
+
+        .story-panel:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        .story-image {
+            width: 100%; /* Full width of the panel */
+            height: auto; /* Adjust height automatically to maintain aspect ratio */
+            max-height: 300px; /* Max height for uniformity */
+            border-radius: 10px; /* Rounded corners for images */
+            object-fit: cover; /* Ensure images cover the frame */
+            margin-bottom: 10px; /* Space below image */
+            transition: transform 0.3s; /* Animation for image hover effect */
+        }
+
+        .story-image:hover {
+            transform: scale(1.05); /* Zoom effect on image hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0; /* Stick to the bottom */
+            width: 100%; /* Full width */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Logo added here -->
+        <h1>Julius Bett</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <main id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            
+            <div class="story-panel">
+                <h3>My High School Life</h3>
+                <img src="m1.jpg" alt="My High School Life" class="story-image">
+                <p>Welcome! I'm Julius, a passionate web developer with expertise in SQL, PHP, and delivering online services tailored to the needs of learners and individuals alike. My journey in technology began in 2017 when I joined Meteitei Boys High School, where I embraced my love for computers. I took computer studies as one of my subjects, learning all the essentials, including various Microsoft Office packages, which provided me with a solid foundation in digital skills.</p>
+            </div>
+            
+            <div class="story-panel">
+                <h3>My University Journey</h3>
+                <img src="m5.jpg" alt="My University Journey" class="story-image">
+                <p>Graduating from high school in 2020, I was excited to continue my education at Kibabii University in 2021, where I enrolled in a Bachelor’s degree program in Education, specializing in Computer and Mathematics. This program has been instrumental in deepening my computer skills and expanding my knowledge in coding, web development, and system development.</p>
+            </div>
+            
+            <div class="story-panel">
+                <h3>Tech Innovator</h3>
+                <img src="m4.jpg" alt="The Remaining Story" class="story-image">
+                <p>Throughout my studies, I've honed my abilities in programming languages such as JavaScript and have become proficient in creating dynamic web applications. As I progress through my fourth year, I look forward to graduating in December 2025 and utilizing my skills to contribute to innovative projects.</p>
+                <p>My passion lies in providing online services that enhance learning experiences for students and facilitate access to educational resources. I believe in the power of technology to bridge gaps and create opportunities, and I'm committed to delivering high-quality solutions that meet the needs of my clients.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+       <p>&copy; 2024 Julius Bett. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Julius Bett</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #fff; /* Change text color for better visibility */
+            background: url('m7.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Cover the entire background */
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+
+        nav h1 {
+            display: inline;
+            font-size: 2rem; /* Adjusted font size */
+        }
+
+        nav ul {
+            list-style: none;
+            float: right;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s; /* Transition for link color */
+        }
+
+        nav ul li a:hover {
+            color: #ff9900; /* Change color on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Main Section */
+        main {
+            flex: 1; /* Allow the main section to grow */
+            padding: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6); /* Dark background for content for contrast */
+            margin: 2rem; /* Margin for spacing */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+
+        main h2 {
+            font-size: 2.5rem; /* Adjusted font size for the main title */
+            margin-bottom: 1rem; /* Space below heading */
+            color: #ff9900; /* Highlighted color for the title */
+            text-transform: uppercase; /* Make title uppercase */
+            font-weight: bold; /* Bold font for the title */
+        }
+
+        /* Skills List */
+        main ul {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            font-size: 1.2rem; /* Font size for skills */
+        }
+
+        main ul li {
+            margin: 1rem 0; /* Margin between skills */
+            padding: 0.5rem;
+            border: 1px solid #ff9900; /* Border for skills */
+            border-radius: 5px; /* Rounded corners for list items */
+            transition: background-color 0.3s; /* Transition for background color */
+        }
+
+        main ul li:hover {
+            background-color: rgba(255, 153, 0, 0.2); /* Change background on hover */
+        }
+
+        /* Additional Information Section */
+        .info-section {
+            margin-top: 2rem; /* Space above the information section */
+            font-size: 1.2rem; /* Font size for additional info */
+            color: #fff; /* Text color */
+            padding: 1rem; /* Padding around the info section */
+            border: 1px solid #ff9900; /* Border for info section */
+            border-radius: 10px; /* Rounded corners for info section */
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+        }
+
+        .info-section a {
+            color: #ff9900; /* Link color */
+            text-decoration: underline; /* Underline for links */
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0; /* Stick to the bottom */
+            width: 100%; /* Full width */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav h1 {
+                font-size: 1.5rem; /* Adjust font size for mobile */
+            }
+
+            main h2 {
+                font-size: 2rem; /* Adjust font size for mobile */
+            }
+
+            main ul li {
+                font-size: 1rem; /* Adjust font size for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <h1><img src="logo.png" alt="Logo" style="width: 50px; vertical-align: middle;"> Julius Bett</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <ul>
+                <li>Web Development (HTML, CSS, JavaScript)</li>
+                <li>Backend Development (PHP)</li>
+                <li>Database Management (SQL)</li>
+                <li>Online Services Delivery</li>
+            </ul>
+            
+            <div class="info-section">
+                <p>This is my first system that I developed. You can check it out by following this <a href="https://1drv.ms/v/c/e6ab3a973834c91c/EbHGKFyKvItMnQb3Aqmv2zoB8Cxfov_WNYWMro91_xxDhQ?e=1j6TjP" target="_blank">link</a>.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Julius Bett. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
