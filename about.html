@@ -32,6 +32,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
             display: flex; /* Use flexbox for layout */
             align-items: center; /* Center items vertically */
+            flex-wrap: wrap; /* Allow items to wrap on small screens */
         }
 
         nav img {
@@ -47,10 +48,11 @@
         nav ul {
             list-style: none;
             margin-left: auto; /* Push the navigation links to the right */
+            display: flex; /* Use flex for navigation items */
+            flex-wrap: wrap; /* Allow items to wrap on small screens */
         }
 
         nav ul li {
-            display: inline;
             margin: 0 1.5rem;
         }
 
@@ -74,7 +76,7 @@
         }
 
         main h2 {
-            font-size: 3rem; /* Increased font size for the main title */
+            font-size: 2.5rem; /* Decreased font size for the main title */
             margin-bottom: 1rem; /* Space below heading */
             color: #333; /* Color for the title */
             text-transform: uppercase; /* Make title uppercase */
@@ -119,6 +121,44 @@
             position: relative;
             bottom: 0; /* Stick to the bottom */
             width: 100%; /* Full width */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav h1 {
+                font-size: 1.5rem; /* Smaller title for mobile */
+            }
+
+            main h2 {
+                font-size: 2rem; /* Smaller main title for mobile */
+            }
+
+            nav ul li {
+                margin: 0 0.5rem; /* Less margin for navigation on mobile */
+            }
+
+            .story-panel {
+                padding: 15px; /* Less padding for panels on mobile */
+            }
+
+            .story-image {
+                max-height: 200px; /* Smaller max height for images on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column; /* Stack items vertically on small screens */
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack navigation items vertically */
+                margin-top: 1rem; /* Space between title and links */
+            }
+
+            nav ul li {
+                margin: 0.5rem 0; /* Vertical margin for links */
+            }
         }
     </style>
 </head>
