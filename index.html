@@ -59,21 +59,25 @@
         nav ul {
             list-style: none;
             float: right;
+            display: flex; /* Use flexbox for horizontal arrangement */
+            align-items: center; /* Center items vertically */
         }
 
         nav ul li {
-            display: inline;
             margin: 0 1rem;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            padding: 0.5rem 1rem; /* Add padding to buttons */
+            border-radius: 5px; /* Rounded corners */
+            transition: background 0.3s ease;
         }
 
         nav ul li a:hover {
+            background: rgba(255, 153, 0, 0.5); /* Highlight on hover */
             text-decoration: underline;
-            color: #ff9900;
         }
 
         /* Home Section */
