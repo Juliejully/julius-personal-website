@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julius Bett's Website</title>
+    <title>Home - Julius Bett</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* General Reset */
         * {
@@ -13,57 +14,64 @@
         }
 
         /* Body Styling */
-        body {
+        html, body {
+            height: 100%;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            line-height: 1.6;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            background-image: url('m7.png');
+            background-size: cover;
+            background-position: center;
         }
 
-        /* Navigation Styling */
+        /* Flex Container for Main Content */
+        .container {
+            flex: 1;
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
         nav {
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             padding: 1rem;
             position: relative;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
-        /* Logo and Title */
         .logo {
-            height: 40px;
-            margin-right: 1rem;
+            height: 50px;
         }
 
         nav h1 {
-            display: inline;
             font-size: 1.5rem;
-            color: #fff;
-            margin-left: 10px;
+            margin-left: 1rem;
         }
 
-        /* Desktop Navigation */
-        .desktop-nav {
+        nav ul {
             list-style: none;
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
-        .desktop-nav li {
-            margin: 0;
-        }
-
-        .desktop-nav li a {
+        nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-weight: bold;
         }
 
-        .desktop-nav li a:hover {
+        nav ul li a:hover {
+            text-decoration: underline;
             color: #ff9900;
         }
 
-        /* Hamburger Icon for Mobile */
+        /* Hamburger and Mobile Navigation */
         .hamburger {
             display: none;
             font-size: 1.5rem;
@@ -71,87 +79,78 @@
             color: #fff;
         }
 
-        /* Mobile Navigation */
         .mobile-nav {
             display: none;
             flex-direction: column;
-            background-color: #333;
             position: absolute;
-            top: 60px;
-            right: 0;
+            top: 100%;
+            left: 0;
             width: 100%;
-            padding: 1rem;
-            z-index: 1000;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 1rem 0;
         }
 
         .mobile-nav ul {
-            list-style: none;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1rem;
         }
 
         .mobile-nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
             font-weight: bold;
-            padding: 0.5rem;
-            display: block;
-            border-radius: 4px;
+            color: #fff;
         }
 
-        .mobile-nav ul li a:hover {
-            background-color: #ff9900;
+        /* Home Section */
+        main {
+            background: rgba(244, 244, 244, 0.8);
+            padding: 4rem 0;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        main h2 {
+            font-size: 2.5rem;
             color: #333;
         }
 
-        /* Hero Section Styling */
-        .hero {
-            padding: 3rem;
-            text-align: center;
-            background: url('background.jpg') no-repeat center center/cover;
-            color: #fff;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
+        main p {
+            margin: 1rem 0;
             font-size: 1.2rem;
-            margin-bottom: 2rem;
         }
 
-        .hero .cta-button {
+        .buttons .button {
+            display: inline-block;
             padding: 0.8rem 1.5rem;
-            font-size: 1rem;
+            margin: 1rem;
+            background: #333;
             color: #fff;
-            background-color: #ff9900;
-            border: none;
-            border-radius: 4px;
             text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
         }
 
-        .hero .cta-button:hover {
-            background-color: #e68a00;
+        .button:hover {
+            background: #555;
+            transform: scale(1.05);
         }
 
-        /* Footer Styling */
+        /* Footer */
         footer {
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
-            padding: 1rem;
             text-align: center;
+            padding: 1rem;
+            margin-top: auto;
         }
 
-        /* Media Queries for Responsive Layout */
+        /* Media Queries */
         @media (max-width: 768px) {
-            .desktop-nav {
+            nav ul {
                 display: none;
             }
-            
+
             .hamburger {
                 display: block;
             }
@@ -166,18 +165,16 @@
 
     <!-- Navigation -->
     <nav>
-        <div class="left-section">
-            <img src="logo.png" alt="Logo" class="logo">
-            <h1>Julius Bett</h1>
-        </div>
-        <ul class="desktop-nav">
+        <img src="logo.png" alt="JB Logo" class="logo">
+        <h1>Julius Bett</h1>
+        <div class="hamburger" onclick="toggleMobileNav()">&#9776;</div>
+        <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="contact.html">Contact Me</a></li>
         </ul>
-        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
-        <div class="mobile-nav">
+        <div class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -187,33 +184,77 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to Julius Bett's Website</h1>
-        <p>Let's design the website and showcase my skills in web development, SQL, PHP, and online service delivery.</p>
-        <a href="about.html" class="cta-button">Learn More About Me</a>
-    </section>
+    <!-- Home Section -->
+    <main>
+        <div class="container">
+            <h2 id="greeting">Welcome to My Personal Website</h2>
+            <p>Experienced Web Developer | SQL and PHP Expert | Online Service Specialist</p>
+            <div class="buttons">
+                <a href="skills.html" class="button">View My Work</a>
+                <a href="about.html" class="button">Learn More About Me</a>
+                <a href="#" id="myBtn" class="button">Open Modal</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>This is a modal popup with more information!</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Julius Bett. All rights reserved.</p>
+        <p>© 2024 Julius Bett. All rights reserved.</p>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        hamburger.addEventListener('click', () => {
+        // Toggle Mobile Navigation
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
             mobileNav.classList.toggle('active');
-        });
+        }
 
-        // Optional: Close the dropdown if clicked outside
-        document.addEventListener('click', function(event) {
-            if (!mobileNav.contains(event.target) && event.target !== hamburger) {
-                mobileNav.classList.remove('active');
+        // Greeting Function
+        function displayGreeting() {
+            const greetingElement = document.getElementById('greeting');
+            const hour = new Date().getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good Morning!";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
             }
-        });
+
+            greetingElement.innerText = `${greeting} Welcome to My Personal Website`;
+        }
+
+        // Modal Script
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Call Greeting
+        displayGreeting();
     </script>
 </body>
 </html>
