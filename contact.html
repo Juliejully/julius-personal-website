@@ -20,11 +20,11 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #fff;
-            height: 100vh;
+            color: #fff; /* Change text color for better visibility */
+            height: 100vh; /* Full height of the viewport */
             display: flex;
             flex-direction: column;
-            overflow: hidden;
+            overflow: hidden; /* Prevent scrollbars */
         }
 
         /* Background Styling */
@@ -34,134 +34,114 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('m7.jpg') no-repeat center center fixed;
-            background-size: cover;
-            filter: blur(8px);
-            z-index: -1;
+            background: url('m7.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Cover the entire background */
+            filter: blur(8px); /* Blur effect */
+            z-index: -1; /* Place behind all other content */
         }
 
         /* Navigation */
         nav {
-            background-color: rgba(51, 51, 51, 0.8);
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
             color: #fff;
             padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
         }
 
         nav h1 {
             display: inline;
-            font-size: 2rem;
+            font-size: 2rem; /* Adjusted font size */
         }
 
         nav ul {
             list-style: none;
-            display: flex; /* Change to flex for better alignment */
-            justify-content: flex-end; /* Align items to the right */
+            float: right;
         }
 
         nav ul li {
+            display: inline;
             margin: 0 1.5rem;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s; /* Transition for link color */
         }
 
         nav ul li a:hover {
-            color: #ff9900;
-            text-decoration: underline;
+            color: #ff9900; /* Change color on hover */
+            text-decoration: underline; /* Underline on hover */
         }
 
         /* Main Section */
         main {
-            flex: 1;
+            flex: 1; /* Allow the main section to grow */
             padding: 2rem;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            margin: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.6); /* Dark background for content for contrast */
+            margin: 2rem; /* Margin for spacing */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
         }
 
         main h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #ff9900;
-            text-transform: uppercase;
-            font-weight: bold;
+            font-size: 2.5rem; /* Adjusted font size for the main title */
+            margin-bottom: 1rem; /* Space below heading */
+            color: #ff9900; /* Highlighted color for the title */
+            text-transform: uppercase; /* Make title uppercase */
+            font-weight: bold; /* Bold font for the title */
         }
 
         /* Social Media List */
         .social-media {
-            list-style: none;
-            padding: 0;
-            font-size: 1.5rem;
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            font-size: 1.5rem; /* Font size for social media links */
             display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: center; /* Center the icons */
+            flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
+            margin-top: 1rem; /* Space above the icons */
         }
 
         .social-media li {
-            margin: 0 1rem;
+            margin: 0 1rem; /* Margin between links */
         }
 
         .social-media li a {
-            color: #ff9900;
-            text-decoration: none;
-            transition: color 0.3s;
+            color: #ff9900; /* Link color */
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s; /* Transition for link color */
         }
 
         .social-media li a:hover {
-            color: #fff;
-            transform: scale(1.1);
+            color: #fff; /* Change color on hover */
+            transform: scale(1.1); /* Scale effect on hover */
         }
 
         /* Footer */
         footer {
-            background-color: rgba(51, 51, 51, 0.8);
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
             color: #fff;
             text-align: center;
             padding: 1rem;
             position: relative;
-            bottom: 0;
-            width: 100%;
+            bottom: 0; /* Stick to the bottom */
+            width: 100%; /* Full width */
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             nav h1 {
-                font-size: 1.5rem;
+                font-size: 1.5rem; /* Adjust font size for mobile */
             }
 
             main h2 {
-                font-size: 2rem;
+                font-size: 2rem; /* Adjust font size for mobile */
             }
 
             .social-media li {
-                font-size: 1.2rem; /* Slightly larger font for readability */
-            }
-        }
-
-        @media (max-width: 576px) {
-            nav ul {
-                flex-direction: column; /* Stack nav items on small screens */
-                align-items: center; /* Center items */
-            }
-
-            nav ul li {
-                margin: 0.5rem 0; /* Space out vertical items */
-            }
-
-            main h2 {
-                font-size: 1.8rem; /* Further reduce font size */
-            }
-
-            .social-media li {
-                font-size: 1rem; /* Smaller size for mobile */
-                margin: 0 0.5rem; /* Less margin for mobile */
+                font-size: 1.2rem; /* Adjust font size for mobile */
             }
         }
     </style>
@@ -174,7 +154,7 @@
     <nav>
         <div class="container">
             <h1><img src="logo.png" alt="Logo" style="width: 50px; vertical-align: middle;"> Julius Bett</h1>
-            <ul>
+            <ul class="d-flex justify-content-end">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="skills.html">Skills</a></li>
