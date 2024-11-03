@@ -55,12 +55,13 @@
 
         nav ul {
             list-style: none;
-            float: right;
+            display: flex; /* Change to flex */
+            flex-direction: column; /* Stack items vertically */
+            align-items: flex-end; /* Align items to the end */
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 1.5rem;
+            margin: 0.5rem 0; /* Adjust margin for vertical spacing */
             padding: 0.5rem 1rem; /* Add padding for spacing within the box */
             background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for the box */
             border-radius: 5px; /* Rounded corners */
