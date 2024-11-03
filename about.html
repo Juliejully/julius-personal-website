@@ -32,7 +32,6 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
             display: flex; /* Use flexbox for layout */
             align-items: center; /* Center items vertically */
-            flex-wrap: wrap; /* Allow items to wrap on small screens */
         }
 
         nav img {
@@ -49,26 +48,26 @@
             list-style: none;
             margin-left: auto; /* Push the navigation links to the right */
             display: flex; /* Use flex for navigation items */
-            flex-wrap: wrap; /* Allow items to wrap on small screens */
         }
 
         nav ul li {
-            margin: 0 1rem; /* Margin between buttons */
+            margin: 0 1.5rem; /* Margin between each button */
+            display: inline-block; /* Ensure each button is treated as a block */
         }
 
         nav ul li a {
-            display: block; /* Make the link a block element */
-            background-color: #444; /* Dark background for the buttons */
-            color: #fff; /* White text */
+            color: #fff;
             text-decoration: none;
-            padding: 10px 15px; /* Padding inside buttons */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s; /* Transition for background color */
+            transition: color 0.3s; /* Transition for link color */
+            padding: 10px 15px; /* Add padding for better clickable area */
+            border: 1px solid transparent; /* Initial border */
+            border-radius: 5px; /* Rounded corners for the button */
         }
 
         nav ul li a:hover {
-            background-color: #ff9900; /* Change background color on hover */
-            text-decoration: none; /* No underline on hover */
+            color: #ff9900; /* Change color on hover */
+            text-decoration: underline; /* Underline on hover */
+            border: 1px solid #ff9900; /* Border color change on hover */
         }
 
         /* Main Section */
@@ -186,26 +185,25 @@
             <div class="story-panel">
                 <h3>My High School Life</h3>
                 <img src="m1.jpg" alt="My High School Life" class="story-image">
-                <p>Welcome! I'm Julius, a passionate web developer with expertise in SQL, PHP, and delivering online services tailored to the needs of learners and individuals alike. My journey in technology began in 2017 when I joined Meteitei Boys High School, where I embraced my love for computers. I took computer studies as one of my subjects, learning all the essentials, including various Microsoft Office packages, which provided me with a solid foundation in digital skills.</p>
+                <p>Welcome! I'm Julius, a passionate web developer with expertise in SQL, PHP, and delivering online services tailored to the needs of learners and individuals alike. My journey in technology began in 2017 when I joined Meteitei Boys High School, where I embraced my love for computers. I took computer studies as one of my subjects, learning the fundamentals of programming, web design, and database management. The knowledge I gained during those formative years laid the groundwork for my future career.</p>
             </div>
             
             <div class="story-panel">
-                <h3>My University Journey</h3>
-                <img src="m5.jpg" alt="My University Journey" class="story-image">
-                <p>Graduating from high school in 2020, I was excited to continue my education at Kibabii University in 2021, where I enrolled in a Bachelor’s degree program in Education, specializing in Computer and Mathematics. This program has been instrumental in deepening my computer skills and expanding my knowledge in coding, web development, and system development.</p>
+                <h3>My University Story</h3>
+                <img src="m2.jpg" alt="My University Story" class="story-image">
+                <p>After completing high school, I enrolled at the University of Eldoret, where I pursued a degree in Computer Science. This experience allowed me to deepen my understanding of programming languages, software development, and project management. It was during my time at university that I honed my skills in web development, building projects that aimed to address real-world challenges.</p>
             </div>
             
             <div class="story-panel">
-                <h3>Tech Innovator</h3>
-                <img src="m4.jpg" alt="The Remaining Story" class="story-image">
-                <p>Throughout my studies, I've honed my abilities in programming languages such as JavaScript and have become proficient in creating dynamic web applications. As I progress through my fourth year, I look forward to graduating in December 2025 and utilizing my skills to contribute to innovative projects.</p>
-                <p>My passion lies in providing online services that enhance learning experiences for students and facilitate access to educational resources. I believe in the power of technology to bridge gaps and create opportunities, and I'm committed to delivering high-quality solutions that meet the needs of my clients.</p>
+                <h3>Remaining Story</h3>
+                <img src="m3.jpg" alt="Remaining Story" class="story-image">
+                <p>Today, I continue to work on exciting projects that enhance online service delivery, helping businesses and individuals navigate the digital landscape. My goal is to create impactful solutions that improve efficiency and accessibility for users. I am committed to lifelong learning and staying updated with the latest trends in technology to provide the best services possible.</p>
             </div>
         </div>
     </main>
 
     <footer>
-       <p>&copy; 2024 Julius Bett. All rights reserved.</p>
+        <p>&copy; 2024 Julius Bett. All rights reserved.</p>
     </footer>
 
 </body>
