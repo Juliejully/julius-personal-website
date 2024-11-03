@@ -41,29 +41,26 @@
             padding: 1rem;
             backdrop-filter: blur(10px);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            position: absolute; /* Position the logo absolutely */
-            top: 50%; /* Center it vertically */
-            left: 1rem; /* Add space from the left */
-            transform: translateY(-50%); /* Adjust to truly center */
-            height: 50px; /* Set a height for the logo */
+            height: 50px;
         }
 
         nav h1 {
-            display: inline;
             font-size: 1.5rem;
-            margin-left: 70px; /* Adjust margin for title to account for logo */
+            margin-left: 1rem;
         }
 
         nav ul {
             list-style: none;
-            float: right;
+            display: flex;
         }
 
         nav ul li {
-            display: inline;
             margin: 0 1rem;
         }
 
@@ -87,6 +84,7 @@
             top: 100%;
             width: 100%;
             padding: 1rem;
+            z-index: 1;
         }
 
         .mobile-nav ul {
@@ -101,7 +99,9 @@
 
         .hamburger {
             display: none;
+            font-size: 1.5rem;
             cursor: pointer;
+            color: #fff;
         }
 
         /* Home Section */
@@ -184,59 +184,16 @@
 
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
-            nav h1 {
-                font-size: 1.2rem;
-            }
-
-            nav ul li {
-                margin: 0 0.5rem;
-            }
-
             .hamburger {
                 display: block;
-                font-size: 1.5rem;
-                float: right;
-                cursor: pointer;
             }
 
-            main h2 {
-                font-size: 2rem;
+            nav ul {
+                display: none;
             }
 
-            main p {
-                font-size: 1rem;
-            }
-
-            .buttons .button {
-                padding: 0.5rem 1rem;
-                margin: 0.5rem;
-            }
-
-            footer {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav h1 {
-                font-size: 1rem;
-            }
-
-            main h2 {
-                font-size: 1.5rem;
-            }
-
-            main p {
-                font-size: 0.9rem;
-            }
-
-            .buttons .button {
-                padding: 0.4rem 0.8rem;
-                margin: 0.3rem;
-            }
-
-            footer {
-                font-size: 0.8rem;
+            .mobile-nav.active {
+                display: flex;
             }
         }
     </style>
@@ -245,24 +202,22 @@
 
     <!-- Navigation -->
     <nav>
-        <div class="container">
-            <img src="logo.png" alt="JB Logo" class="logo"> <!-- Logo positioned at the top left -->
-            <h1>Julius Bett</h1>
-            <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <img src="logo.png" alt="JB Logo" class="logo">
+        <h1>Julius Bett</h1>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+        <div class="mobile-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
             </ul>
-            <div class="mobile-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="contact.html">Contact Me</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
