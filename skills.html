@@ -6,7 +6,7 @@
     <title>Skills - Julius Bett</title>
     <link rel="stylesheet" href="style.css">
     <style>
-       /* General Reset */
+     /* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -40,11 +40,11 @@ nav h1 {
 
 nav ul {
     list-style: none;
-    float: right;
+    display: flex; /* Use flexbox to keep items in a row */
+    justify-content: flex-end; /* Align navigation items to the right */
 }
 
 nav ul li {
-    display: inline-block; /* Change to inline-block for box effect */
     margin: 0 1rem; /* Adjusted margin */
     padding: 0.5rem 1rem; /* Padding for the button */
     border: 2px solid #ff9900; /* Border for the button */
@@ -155,17 +155,8 @@ footer {
     nav {
         padding: 0.5rem; /* Less padding for small screens */
     }
-
-    nav ul {
-        float: none; /* Stack the navigation items */
-        text-align: center; /* Center the text */
-    }
-
-    nav ul li {
-        display: block; /* Stack buttons vertically */
-        margin: 0.5rem 0; /* Margin between stacked buttons */
-    }
 }
+
 
     </style>
 </head>
