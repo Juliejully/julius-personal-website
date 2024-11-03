@@ -53,18 +53,22 @@
         }
 
         nav ul li {
-            margin: 0 1.5rem;
+            margin: 0 1rem; /* Margin between buttons */
         }
 
         nav ul li a {
-            color: #fff;
+            display: block; /* Make the link a block element */
+            background-color: #444; /* Dark background for the buttons */
+            color: #fff; /* White text */
             text-decoration: none;
-            transition: color 0.3s; /* Transition for link color */
+            padding: 10px 15px; /* Padding inside buttons */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Transition for background color */
         }
 
         nav ul li a:hover {
-            color: #ff9900; /* Change color on hover */
-            text-decoration: underline; /* Underline on hover */
+            background-color: #ff9900; /* Change background color on hover */
+            text-decoration: none; /* No underline on hover */
         }
 
         /* Main Section */
