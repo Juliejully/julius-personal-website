@@ -87,6 +87,7 @@
             top: 100%;
             width: 100%;
             padding: 1rem;
+            z-index: 1000; /* Ensures dropdown is on top */
         }
 
         .mobile-nav ul {
@@ -104,8 +105,9 @@
             cursor: pointer;
         }
 
-        .active {
-            display: flex; /* Show the mobile nav when active */
+        /* Show mobile nav when active */
+        .mobile-nav.active {
+            display: flex;
         }
 
         /* Home Section */
@@ -157,8 +159,8 @@
                 font-size: 1.2rem;
             }
 
-            nav ul li {
-                margin: 0 0.5rem;
+            nav ul {
+                display: none; /* Hide desktop nav on mobile */
             }
 
             .hamburger {
@@ -303,7 +305,7 @@
         const mobileNav = document.querySelector('.mobile-nav');
 
         hamburger.onclick = function() {
-            mobileNav.classList.toggle('active');
+            mobileNav.classList.toggle('active'); // Toggle visibility on click
         }
 
         // Call the displayGreeting function
