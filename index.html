@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar with Hamburger Toggle</title>
+    <title>Julius Bett's Website</title>
     <style>
         /* General Reset */
         * {
@@ -106,6 +106,46 @@
             color: #333;
         }
 
+        /* Hero Section Styling */
+        .hero {
+            padding: 3rem;
+            text-align: center;
+            background: url('background.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .cta-button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff9900;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #e68a00;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
         /* Media Queries for Responsive Layout */
         @media (max-width: 768px) {
             .desktop-nav {
@@ -146,6 +186,18 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Julius Bett's Website</h1>
+        <p>Let's design the website and showcase my skills in web development, SQL, PHP, and online service delivery.</p>
+        <a href="about.html" class="cta-button">Learn More About Me</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Julius Bett. All rights reserved.</p>
+    </footer>
 
     <script>
         // Mobile Navigation Toggle
