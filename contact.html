@@ -20,137 +20,141 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #fff; /* Change text color for better visibility */
-            height: 100vh; /* Full height of the viewport */
+            color: #fff;
+            height: auto; /* Allow body height to grow as needed */
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Prevent scrollbars */
         }
 
         /* Background Styling */
         .background {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('m7.jpg') no-repeat center center fixed; /* Background image */
-            background-size: cover; /* Cover the entire background */
-            filter: blur(8px); /* Blur effect */
-            z-index: -1; /* Place behind all other content */
+            background: url('m7.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(8px);
+            z-index: -1;
         }
 
         /* Navigation */
         nav {
-            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav h1 {
             display: inline;
-            font-size: 2rem; /* Adjusted font size */
+            font-size: 2rem;
         }
 
         nav ul {
             list-style: none;
-            display: flex; /* Change to flex */
-            flex-direction: column; /* Stack items vertically */
-            align-items: flex-end; /* Align items to the end */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 0;
         }
 
         nav ul li {
-            margin: 0.5rem 0; /* Adjust margin for vertical spacing */
-            padding: 0.5rem 1rem; /* Add padding for spacing within the box */
-            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for the box */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s; /* Transition for background color */
+            margin: 0 1.5rem;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s; /* Transition for link color */
-        }
-
-        nav ul li:hover {
-            background-color: rgba(255, 255, 255, 0.3); /* Change background on hover */
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #ff9900; /* Change color on hover */
-            text-decoration: underline; /* Underline on hover */
+            color: #ff9900;
+            text-decoration: underline;
         }
 
         /* Main Section */
         main {
-            flex: 1; /* Allow the main section to grow */
+            flex: 1;
             padding: 2rem;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6); /* Dark background for content for contrast */
-            margin: 2rem; /* Margin for spacing */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            background: rgba(0, 0, 0, 0.6);
+            margin: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         main h2 {
-            font-size: 2.5rem; /* Adjusted font size for the main title */
-            margin-bottom: 1rem; /* Space below heading */
-            color: #ff9900; /* Highlighted color for the title */
-            text-transform: uppercase; /* Make title uppercase */
-            font-weight: bold; /* Bold font for the title */
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff9900;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
-        /* Social Media List */
-        .social-media {
-            list-style: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
-            font-size: 1.5rem; /* Font size for social media links */
+        /* Social Media Box */
+        .social-media-box {
             display: flex;
-            justify-content: center; /* Center the icons */
-            flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
-            margin-top: 1rem; /* Space above the icons */
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .social-media {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
         }
 
         .social-media li {
-            margin: 0 1rem; /* Margin between links */
+            margin: 0 1rem;
         }
 
         .social-media li a {
-            color: #ff9900; /* Link color */
-            text-decoration: none; /* Remove underline */
-            transition: color 0.3s; /* Transition for link color */
+            color: #ff9900;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
         .social-media li a:hover {
-            color: #fff; /* Change color on hover */
-            transform: scale(1.1); /* Scale effect on hover */
+            color: #fff;
+            transform: scale(1.1);
         }
 
         /* Footer */
         footer {
-            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            background-color: rgba(51, 51, 51, 0.8);
             color: #fff;
             text-align: center;
             padding: 1rem;
-            position: relative;
-            bottom: 0; /* Stick to the bottom */
-            width: 100%; /* Full width */
+            width: 100%;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            nav h1 {
-                font-size: 1.5rem; /* Adjust font size for mobile */
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
             }
 
             main h2 {
-                font-size: 2rem; /* Adjust font size for mobile */
+                font-size: 2rem;
             }
 
             .social-media li {
-                font-size: 1.2rem; /* Adjust font size for mobile */
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -176,14 +180,18 @@
         <div class="container">
             <h2>Contact Me</h2>
             <p>Connect with me on social media or send me a message.</p>
-            <ul class="social-media">
-                <li><a href="https://wa.me/254707315958" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-                <li><a href="https://www.facebook.com/julie.jully.161" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="https://x.com/JulieJully2?t=ZRTXPRiHPCWyEWwV59rWPQ&s=09" target="_blank"><i class="fab fa-x"></i></a></li>
-                <li><a href="https://www.instagram.com/julie.jully.161?igsh=MWp6bTR1ODludjgwNg==" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/messaging/?&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BVvGI5fKuSbioc4sqaIEu3Q%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://www.tiktok.com/@bettjulie?_t=8r43mHxcgQo&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a></li>
-            </ul>
+            
+            <div class="social-media-box">
+                <ul class="social-media">
+                    <li><a href="https://wa.me/254707315958" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.facebook.com/julie.jully.161" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://x.com/JulieJully2?t=ZRTXPRiHPCWyEWwV59rWPQ&s=09" target="_blank"><i class="fab fa-x"></i></a></li>
+                    <li><a href="https://www.instagram.com/julie.jully.161?igsh=MWp6bTR1ODludjgwNg==" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/messaging/?&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BVvGI5fKuSbioc4sqaIEu3Q%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://www.tiktok.com/@bettjulie?_t=8r43mHxcgQo&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+
             <p>Email: <a href="mailto:bettjulie705@gmail.com" style="color: #ff9900;">bettjulie705@gmail.com</a></p>
         </div>
     </main>
