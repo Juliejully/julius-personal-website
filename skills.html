@@ -6,172 +6,166 @@
     <title>Skills - Julius Bett</title>
     <link rel="stylesheet" href="style.css">
     <style>
-     /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Body Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #fff; /* Change text color for better visibility */
-    background: url('m7.jpg') no-repeat center center fixed; /* Background image */
-    background-size: cover; /* Cover the entire background */
-    height: 100vh; /* Full height of the viewport */
-    display: flex;
-    flex-direction: column;
-}
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: url('m7.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* Navigation */
-nav {
-    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
-    color: #fff;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-}
+        /* Navigation */
+        nav {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-nav h1 {
-    display: inline;
-    font-size: 2rem; /* Adjusted font size */
-}
+        nav h1 {
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+        }
 
-/* Change display to block for vertical list */
-nav ul {
-    list-style: none;
-    display: block; /* Change to block to stack items vertically */
-    margin-top: 1rem; /* Add margin to separate from the heading */
-}
+        nav h1 img {
+            width: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
 
-nav ul li {
-    margin: 0.5rem 0; /* Adjusted margin for vertical spacing */
-    padding: 0.5rem 1rem; /* Padding for the button */
-    border: 2px solid #ff9900; /* Border for the button */
-    border-radius: 5px; /* Rounded corners for buttons */
-    transition: background-color 0.3s, color 0.3s; /* Transition for background and text color */
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s; /* Transition for link color */
-    display: block; /* Make the link fill the button */
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-nav ul li:hover {
-    background-color: rgba(255, 153, 0, 0.2); /* Change background on hover */
-}
+        nav ul li a:hover {
+            color: #ff9900;
+            text-decoration: underline;
+        }
 
-nav ul li:hover a {
-    color: #ff9900; /* Change link color on hover */
-}
+        /* Main Section */
+        main {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
 
-/* Main Section */
-main {
-    flex: 1; /* Allow the main section to grow */
-    padding: 2rem;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6); /* Dark background for content for contrast */
-    margin: 2rem; /* Margin for spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-}
+        main h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff9900;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
 
-main h2 {
-    font-size: 2.5rem; /* Adjusted font size for the main title */
-    margin-bottom: 1rem; /* Space below heading */
-    color: #ff9900; /* Highlighted color for the title */
-    text-transform: uppercase; /* Make title uppercase */
-    font-weight: bold; /* Bold font for the title */
-}
+        /* Skills List */
+        main ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.2rem;
+        }
 
-/* Skills List */
-main ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-    font-size: 1.2rem; /* Font size for skills */
-}
+        main ul li {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            border: 1px solid #ff9900;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-main ul li {
-    margin: 1rem 0; /* Margin between skills */
-    padding: 0.5rem;
-    border: 1px solid #ff9900; /* Border for skills */
-    border-radius: 5px; /* Rounded corners for list items */
-    transition: background-color 0.3s; /* Transition for background color */
-}
+        main ul li:hover {
+            background-color: rgba(255, 153, 0, 0.2);
+        }
 
-main ul li:hover {
-    background-color: rgba(255, 153, 0, 0.2); /* Change background on hover */
-}
+        /* Additional Information Section */
+        .info-section {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: #fff;
+            padding: 1rem;
+            border: 1px solid #ff9900;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+        }
 
-/* Additional Information Section */
-.info-section {
-    margin-top: 2rem; /* Space above the information section */
-    font-size: 1.2rem; /* Font size for additional info */
-    color: #fff; /* Text color */
-    padding: 1rem; /* Padding around the info section */
-    border: 1px solid #ff9900; /* Border for info section */
-    border-radius: 10px; /* Rounded corners for info section */
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-}
+        .info-section a {
+            color: #ff9900;
+            text-decoration: underline;
+        }
 
-.info-section a {
-    color: #ff9900; /* Link color */
-    text-decoration: underline; /* Underline for links */
-}
+        /* Footer */
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
 
-/* Footer */
-footer {
-    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Full width */
-}
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav h1 {
-        font-size: 1.5rem; /* Adjust font size for mobile */
-    }
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+                margin-top: 1rem;
+            }
 
-    nav ul li {
-        margin: 0.5rem 0; /* Keep margin for vertical list */
-    }
+            nav h1 {
+                font-size: 1.5rem;
+            }
 
-    main h2 {
-        font-size: 2rem; /* Adjust font size for mobile */
-    }
+            main h2 {
+                font-size: 2rem;
+            }
 
-    main ul li {
-        font-size: 1rem; /* Adjust font size for mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    nav {
-        padding: 0.5rem; /* Less padding for small screens */
-    }
-}
-
+            main ul li {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="container">
-            <h1><img src="logo.png" alt="Logo" style="width: 50px; vertical-align: middle;"> Julius Bett</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </div>
+        <h1><img src="logo.png" alt="Logo"> Julius Bett</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
     </nav>
 
     <main id="skills">
@@ -185,7 +179,9 @@ footer {
             </ul>
             
             <div class="info-section">
-                <p>This is my first system that I developed. You can check it out by following this <a href="https://1drv.ms/v/c/e6ab3a973834c91c/EbHGKFyKvItMnQb3Aqmv2zoB8Cxfov_WNYWMro91_xxDhQ?e=1j6TjP" target="_blank">link</a>.</p>
+                <p>This is my first system that I developed. You can check it out by following this 
+                    <a href="https://1drv.ms/v/c/e6ab3a973834c91c/EbHGKFyKvItMnQb3Aqmv2zoB8Cxfov_WNYWMro91_xxDhQ?e=1j6TjP" target="_blank">link</a>.
+                </p>
             </div>
         </div>
     </main>
