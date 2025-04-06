@@ -4,193 +4,322 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills - Julius Bett</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Explore Julius Bett's skills in Web Development, PHP, SQL, and online services delivery.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body Styling */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #fff;
+            color: #333;
             background: url('m7.jpg') no-repeat center center fixed;
             background-size: cover;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
         /* Navigation */
         nav {
-            background-color: rgba(51, 51, 51, 0.8);
+            background: linear-gradient(135deg, #1a2a44, #2e3b55);
             color: #fff;
             padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
         }
 
         nav h1 {
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        nav h1 img {
-            width: 50px;
-            margin-right: 10px;
-            vertical-align: middle;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 400;
+            transition: color 0.3s, transform 0.3s;
         }
 
         nav ul li a:hover {
             color: #ff9900;
-            text-decoration: underline;
+            transform: scale(1.1);
         }
 
         /* Main Section */
         main {
             flex: 1;
-            padding: 2rem;
+            padding: 4rem 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        main .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            margin: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         main h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #ff9900;
+            color: #1a2a44;
+            margin-bottom: 2rem;
             text-transform: uppercase;
-            font-weight: bold;
+            position: relative;
         }
 
-        /* Skills List */
-        main ul {
-            list-style: none;
-            padding: 0;
-            font-size: 1.2rem;
+        main h2::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background: #ff9900;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        main ul li {
-            margin: 1rem 0;
-            padding: 0.5rem;
-            border: 1px solid #ff9900;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        main ul li:hover {
-            background-color: rgba(255, 153, 0, 0.2);
-        }
-
-        /* Additional Information Section */
-        .info-section {
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
-            font-size: 1.2rem;
-            color: #fff;
-            padding: 1rem;
-            border: 1px solid #ff9900;
+        }
+
+        .skill-card {
+            background: #fff;
+            padding: 1.5rem;
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #ff9900;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            color: #1a2a44;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(135deg, #ff9900, #e67e22);
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Info Section */
+        .info-section {
+            margin-top: 3rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
         }
 
         .info-section a {
-            color: #ff9900;
-            text-decoration: underline;
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #ff9900, #e67e22);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-section a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
         }
 
         /* Footer */
         footer {
-            background-color: rgba(51, 51, 51, 0.8);
+            background: linear-gradient(135deg, #1a2a44, #2e3b55);
             color: #fff;
             text-align: center;
-            padding: 1rem;
-            width: 100%;
+            padding: 2rem 1rem;
+        }
+
+        footer .social-links {
+            margin-top: 1rem;
+        }
+
+        footer .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #ff9900;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            nav {
+            nav .container {
                 flex-direction: column;
                 align-items: flex-start;
             }
 
             nav ul {
                 flex-direction: column;
-                gap: 0.5rem;
-                align-items: flex-start;
+                gap: 1rem;
                 margin-top: 1rem;
-            }
-
-            nav h1 {
-                font-size: 1.5rem;
             }
 
             main h2 {
                 font-size: 2rem;
             }
 
-            main ul li {
-                font-size: 1rem;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
-        <h1><img src="logo.png" alt="Logo"> Julius Bett</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
-		<li><a href="services.html">Services</a></li>
-
-        </ul>
+        <div class="container">
+            <img src="logo.png" alt="Julius Bett Logo" class="logo">
+            <h1>Julius Bett</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </div>
     </nav>
 
+    <!-- Main Section -->
     <main id="skills">
         <div class="container">
             <h2>My Skills</h2>
-            <ul>
-                <li>Web Development (HTML, CSS, JavaScript)</li>
-                <li>Backend Development (PHP)</li>
-                <li>Database Management (SQL)</li>
-                <li>Online Services Delivery</li>
-            </ul>
-            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend Development</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                    <p>PHP</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Management</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                    <p>SQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Online Services</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                    <p>Delivery & Support</p>
+                </div>
+            </div>
+
             <div class="info-section">
-                <p>This is my first system that I developed. You can check it out by following this 
-                    <a href="https://1drv.ms/v/c/e6ab3a973834c91c/EbHGKFyKvItMnQb3Aqmv2zoB8Cxfov_WNYWMro91_xxDhQ?e=1j6TjP" target="_blank">link</a>.
-                </p>
+                <p>Check out my first system I developed!</p>
+                <a href="https://1drv.ms/v/c/e6ab3a973834c91c/EbHGKFyKvItMnQb3Aqmv2zoB8Cxfov_WNYWMro91_xxDhQ?e=1j6TjP" target="_blank">View Project</a>
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Julius Bett. All rights reserved.</p>
+        <p>© 2025 Julius Bett. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
     </footer>
 
+    <script>
+        // Animate progress bars on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBars = document.querySelectorAll(".progress");
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = "0";
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>
