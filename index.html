@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Julius Bett</title>
-    <meta name="description" content="Welcome to Julius Bett's personal website - a skilled Web Developer with expertise in SQL, PHP, and online services.">
+    <title>Julius Bett - Web Developer & Recent Graduate</title>
+    <meta name="description" content="Julius Bett - B.Sc. holder (Second Class Honours Upper Division, Nov 2025) | Full-Stack Web Developer specializing in PHP, SQL, JavaScript, and modern web solutions.">
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -17,13 +27,10 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-image: url('m7.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            color: #e2e8f0;
+            background: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.95)), url('m7.png') center/cover fixed;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -31,13 +38,14 @@
 
         /* Navigation */
         nav {
-            background: linear-gradient(135deg, #1a2a44, #2e3b55);
-            color: #fff;
-            padding: 1rem;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 1.2rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav .container {
@@ -52,79 +60,115 @@
         .logo {
             height: 50px;
             border-radius: 50%;
-            margin-right: 1rem;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
         }
 
         nav h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         nav ul li a {
-            color: #fff;
+            color: #cbd5e1;
             text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s, transform 0.3s;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         nav ul li a:hover {
-            color: #ff9900;
-            transform: scale(1.1);
+            color: var(--accent);
         }
 
-        /* Hamburger Menu */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
         .hamburger {
             display: none;
-            font-size: 2rem;
+            font-size: 1.8rem;
             background: none;
             border: none;
-            color: #fff;
+            color: white;
             cursor: pointer;
-            transition: color 0.3s;
         }
 
-        .hamburger:hover {
-            color: #ff9900;
-        }
-
-        /* Hero Section */
+        /* Hero Section - Upgraded */
         .hero {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 4rem 1rem;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            min-height: 80vh;
+            padding: 5rem 1rem;
+            min-height: 90vh;
         }
 
-        .hero .container {
-            max-width: 800px;
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease outwards;
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            color: #1a2a44;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
         }
 
         .hero p {
-            font-size: 1.5rem;
-            color: #555;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 1.5rem auto;
         }
 
-        .hero .typed-text {
-            color: #ff9900;
-            font-weight: 600;
+        .typed-text {
+            color: var(--accent);
+            font-weight: 700;
         }
 
         .buttons {
@@ -132,150 +176,99 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2.5rem;
         }
 
         .button {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: linear-gradient(135deg, #ff9900, #e67e22);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
             font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #d97706);
+            color: white;
+            box-shadow: 0 5px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--accent);
         }
 
         .button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.5);
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .modal-content {
-            background: #fff;
-            margin: 10% auto;
-            padding: 2rem;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            animation: slideIn 0.3s ease;
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close:hover {
-            color: #ff9900;
-        }
-
-        .modal-content h3 {
-            color: #1a2a44;
-            margin-bottom: 1rem;
-        }
-
-        .modal-content p {
-            color: #555;
+        .btn-secondary:hover {
+            background: var(--accent);
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1a2a44, #2e3b55);
-            color: #fff;
+            background: rgba(15, 23, 42, 0.98);
+            color: #94a3b8;
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        footer .social-links {
-            margin-top: 1rem;
+        .social-links a {
+            color: #cbd5e1;
+            font-size: 1.6rem;
+            margin: 0 1rem;
+            transition: all 0.3s;
         }
 
-        footer .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
         }
 
-        footer .social-links a:hover {
-            color: #ff9900;
+        /* Modal - Improved */
+        .modal-content {
+            background: white;
+            color: #333;
+            margin: 10% auto;
+            padding: 2.5rem;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: modalPop 0.4s ease;
         }
 
-        /* Responsive Design with Toggle Menu */
+        @keyframes modalPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            nav .container {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
+            .hamburger { display: block; }
             nav ul {
-                display: none; /* Hidden by default */
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                background: linear-gradient(135deg, #1a2a44, #2e3b55);
                 position: absolute;
                 top: 100%;
                 left: 0;
-                padding: 1rem;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            }
-
-            nav ul.active {
-                display: flex; /* Shown when toggled */
-            }
-
-            nav ul li {
                 width: 100%;
-                text-align: left;
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 0.5rem 0;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .buttons {
+                background: var(--primary);
                 flex-direction: column;
-                gap: 1rem;
+                padding: 1rem 0;
+                display: none;
+                border-top: 1px solid rgba(255,255,255,0.1);
             }
+            nav ul.active { display: flex; }
+            nav ul li a { padding: 0.8rem 2rem; }
+
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { font-size: 1.2rem; }
+            .buttons { flex-direction: column; align-items: center; }
+            .button { width: 80%; max-width: 300px; text-align: center; }
         }
     </style>
 </head>
@@ -284,119 +277,81 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div style="display: flex; align-items: center;">
-                <img src="logo.png" alt="Julius Bett Logo" class="logo">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <img src="logo.png" alt="Julius Bett" class="logo">
                 <h1>Julius Bett</h1>
             </div>
-            <button class="hamburger" aria-label="Toggle navigation">
+            <button class="hamburger" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h2 id="greeting"></h2>
-            <p>I’m a passionate <span class="typed-text" id="typed-text"></span></p>
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fas fa-graduation-cap"></i> Recent Graduate • Nov 2025
+            </div>
+            <h1>Hello! I'm <span>Julius Bett</span></h1>
+            <h2 style="font-size: 2rem; font-weight: 500; color: #e2e8f0; margin: 1rem 0;">
+                B.Sc. (Second Class Honours Upper Division)
+            </h2>
+            <p style="font-size: 1.5rem;">
+                Passionate Full-Stack Web Developer | Specializing in <span class="typed-text" id="typed-text"></span>
+            </p>
             <div class="buttons">
-                <a href="skills.html" class="button">View My Work</a>
-                <a href="about.html" class="button">Learn More About Me</a>
-                <a href="#" id="myBtn" class="button" aria-label="Open Modal">Get in Touch</a>
+                <a href="skills.html" class="button btn-primary">View My Portfolio</a>
+                <a href="contact.html" class="button btn-secondary">Hire Me Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <button class="close" aria-label="Close modal">×</button>
-            <h3>Let’s Connect!</h3>
-            <p>Interested in collaborating or hiring me? Reach out via my <a href="contact.html">Contact Page</a> or explore my <a href="services.html">Services</a>!</p>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
-        <p>© 2025 Julius Bett. All rights reserved.</p>
+        <p>© 2025–2026 Julius Bett. All Rights Reserved.</p>
         <div class="social-links">
-            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:your.email@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-        // Greeting based on time of day
-        function displayGreeting() {
-            const greetingElement = document.getElementById('greeting');
-            const hour = new Date().getHours();
-            let greeting;
+        // Time-based greeting removed — replaced with stronger static headline
 
-            if (hour < 12) {
-                greeting = "Good Morning!";
-            } else if (hour < 18) {
-                greeting = "Good Afternoon!";
-            } else {
-                greeting = "Good Evening!";
-            }
-
-            greetingElement.innerText = `${greeting} Welcome to My World`;
-        }
-
-        // Typed.js for dynamic text
-        const typed = new Typed('#typed-text', {
-            strings: ['Web Developer', 'SQL Expert', 'PHP Specialist', 'Online Service Pro'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 1000,
-            loop: true
+        // Enhanced typing effect
+        new Typed('#typed-text', {
+            strings: ['PHP & Laravel', 'MySQL & Database Design', 'JavaScript & Frontend', 'Clean, Modern Web Apps'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 1500,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
         });
 
-        // Modal functionality
-        const modal = document.getElementById("myModal");
-        const btn = document.getElementById("myBtn");
-        const closeBtn = document.querySelector(".close");
-
-        btn.onclick = () => {
-            modal.style.display = "block";
-        }
-
-        closeBtn.onclick = () => {
-            modal.style.display = "none";
-        }
-
-        window.onclick = event => {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // Toggle navigation menu
-        const hamburger = document.querySelector(".hamburger");
-        const navUl = document.querySelector("nav ul");
-
-        hamburger.addEventListener("click", () => {
-            navUl.classList.toggle("active");
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
-        navUl.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                navUl.classList.remove("active");
+        // Close mobile menu on link click
+        document.querySelectorAll('nav ul a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav ul').classList.remove('active');
             });
         });
-
-        // Initialize greeting
-        displayGreeting();
     </script>
 </body>
 </html>
