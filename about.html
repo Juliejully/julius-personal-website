@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- (all your head content stays exactly the same – only style below is updated) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Julius Bett | B.Ed Science Graduate</title>
@@ -13,8 +14,6 @@
         :root {
             --primary: #0f172a;
             --accent: #f59e0b;
-            --light: #f8fafc;
-            --gray: #64748b;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
@@ -26,25 +25,11 @@
             flex-direction: column;
         }
 
-        /* Navigation - Same as updated index.html */
-        nav {
-            background: rgba(15,23,42,0.95);
-            backdrop-filter: blur(12px);
-            padding: 1.2rem 0;
-            position: sticky; top:0; z-index:1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        nav .container {
-            max-width: 1200px; margin:0 auto; padding:0 1rem;
-            display: flex; justify-content: space-between; align-items:center;
-        }
+        /* Navigation (unchanged – same as before) */
+        nav { background: rgba(15,23,42,0.95); backdrop-filter: blur(12px); padding: 1.2rem 0; position: sticky; top:0; z-index:1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        nav .container { max-width: 1200px; margin:0 auto; padding:0 1rem; display: flex; justify-content: space-between; align-items:center; }
         .logo { height:54px; border-radius:50%; border:3px solid var(--accent); box-shadow:0 0 15px rgba(245,158,11,0.3); }
-        nav h1 {
-            font-size:1.8rem; font-weight:700;
-            background: linear-gradient(90deg, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        nav h1 { font-size:1.8rem; font-weight:700; background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         nav ul { display:flex; gap:2.5rem; list-style:none; }
         nav ul a { color:#cbd5e1; text-decoration:none; font-weight:500; position:relative; }
         nav ul a::after { content:''; position:absolute; bottom:-6px; left:0; width:0; height:2px; background:var(--accent); transition:width 0.3s; }
@@ -53,34 +38,13 @@
         .hamburger { display:none; font-size:1.8rem; color:white; background:none; border:none; cursor:pointer; }
 
         /* About Section */
-        .about-section {
-            flex:1;
-            padding: 5rem 1rem;
-            text-align:center;
-        }
+        .about-section { flex:1; padding: 5rem 1rem; text-align:center; }
         .container { max-width:1100px; margin:0 auto; }
-        .page-title {
-            font-size:3.5rem;
-            margin-bottom:1rem;
-            background: linear-gradient(90deg, #fff, var(--accent));
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-        }
-        .badge {
-            display:inline-block;
-            background:linear-gradient(135deg,#f59e0b,#d97706);
-            color:white; padding:0.6rem 1.4rem; border-radius:50px;
-            font-weight:600; margin:1rem 0; box-shadow:0 4px 15px rgba(245,158,11,0.4);
-        }
-        .intro {
-            font-size:1.3rem;
-            max-width:800px;
-            margin:2rem auto;
-            line-height:1.8;
-            color:#cbd5e1;
-        }
+        .page-title { font-size:3.5rem; margin-bottom:1rem; background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .badge { display:inline-block; background:linear-gradient(135deg,#f59e0b,#d97706); color:white; padding:0.6rem 1.4rem; border-radius:50px; font-weight:600; margin:1rem 0; box-shadow:0 4px 15px rgba(245,158,11,0.4); }
+        .intro { font-size:1.3rem; max-width:800px; margin:2rem auto; line-height:1.8; color:#cbd5e1; }
 
-        /* Timeline / Story Grid */
+        /* Timeline Cards */
         .timeline {
             display:grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -95,11 +59,21 @@
             border:1px solid rgba(251,146,60,0.2);
         }
         .card:hover { transform:translateY(-12px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
-        .card img {
-            width:100%;
-            height:220px;
-            object-fit:cover;
+
+        /* KEY FIX: Full image visible – no cropping! */
+        .card-image {
+            width: 100%;
+            height: auto;           /* Let the browser decide the height */
+            max-height: 60vh;       /* Prevent super tall images from overwhelming page */
+            object-fit: contain;    /* THIS shows the entire photo */
+            background: #1e293b;    /* Nice background if image has transparency */
+            padding: 8px;           /* Small padding so image doesn't touch edges */
+            transition: transform 0.4s ease;
         }
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
         .card-content {
             padding:1.8rem;
         }
@@ -113,12 +87,7 @@
             line-height:1.7;
         }
 
-        footer {
-            background:rgba(15,23,42,0.98);
-            padding:2.5rem 1rem;
-            text-align:center;
-            border-top:1px solid rgba(255,255,255,0.1);
-        }
+        footer { background:rgba(15,23,42,0.98); padding:2.5rem 1rem; text-align:center; border-top:1px solid rgba(255,255,255,0.1); }
         .social-links a { color:#cbd5e1; font-size:1.8rem; margin:0 1rem; transition:all 0.3s; }
         .social-links a:hover { color:var(--accent); transform:translateY(-4px); }
 
@@ -130,12 +99,13 @@
             nav ul a{padding:1rem 2rem;}
             .page-title{font-size:2.6rem;}
             .intro{font-size:1.15rem;}
-            .card img{height:180px;}
+            .card-image { padding:4px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation (unchanged) -->
     <nav>
         <div class="container">
             <div style="display:flex; align-items:center; gap:14px;">
@@ -157,7 +127,7 @@
         <div class="container">
             <h1 class="page-title">About Me</h1>
             <div class="badge">
-                <i class="fas fa-graduation-cap"></i> B.Ed Science – Second Class Honours (Upper Division) – 21st Nov 2025
+                Graduation Cap B.Ed Science – Second Class Honours (Upper Division) – 21st Nov 2025
             </div>
             <p class="intro">
                 I am a passionate and fully qualified <strong>Senior Secondary School Teacher</strong> trained in 
@@ -168,28 +138,27 @@
 
             <div class="timeline">
                 <div class="card">
-                    <img src="m1.jpg" alt="Meteitei Boys High School">
+                    <img src="m1.jpg" alt="Meteitei Boys High School" class="card-image">
                     <div class="card-content">
                         <h3>2017 – 2020<br>Meteitei Boys High School</h3>
-                        <p>Scored strong grades in Computer Studies and Mathematics. Discovered my passion for programming and ICT. Excelled in Microsoft Office suite and basic web technologies.</p>
+                        <p>Scored strong grades in Computer Studies and Mathematics. Discovered my passion for programming and ICT.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="m5.jpg" alt="Kibabii University">
+                    <img src="m5.jpg" alt="Kibabii University Graduation" class="card-image">
                     <div class="card-content">
                         <h3>2021 – 2025<br>Kibabii University</h3>
                         <p>Pursued <strong>Bachelor of Education Science</strong> (Computer Studies & Mathematics).<br>
-                           Graduated on <strong>21st November 2025</strong> with <strong>Second Class Honours – Upper Division</strong>.<br>
-                           Completed teaching practice successfully and fully TSC-registerable.</p>
+                           Graduated on <strong>21st November 2025</strong> with <strong>Second Class Honours – Upper Division</strong>.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="m4.jpg" alt="Web Development Projects">
+                    <img src="m4.jpg" alt="Web Development & Coding" class="card-image">
                     <div class="card-content">
                         <h3>Tech Skills & Innovation</h3>
-                        <p>Beyond the classroom, I’m a skilled full-stack web developer proficient in PHP, MySQL, JavaScript, HTML/CSS, and modern frameworks. I build school management systems, result portals, e-learning platforms, and automation tools — adding massive value to any school’s ICT department.</p>
+                        <p>Skilled full-stack web developer (PHP, MySQL, JavaScript). I build school management systems, e-learning platforms, and automation tools — adding huge value to any school’s ICT department.</p>
                     </div>
                 </div>
             </div>
@@ -206,7 +175,6 @@
     </footer>
 
     <script>
-        // Mobile menu
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('nav ul').classList.toggle('active');
         });
