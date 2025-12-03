@@ -3,397 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Julius Bett</title>
-    <meta name="description" content="Professional academic assistance, KCSE computer project development, KUCCPS applications, car ownership transfer, KRA services, passport applications, and more by Julius Bett.">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Services - Julius Bett | B.Ed Science Teacher & Web Developer</title>
+    <meta name="description" content="Julius Bett's Professional Services: KCSE Computer Projects, Academic Assistance, Web Development, Government Online Services | B.Ed Science Graduate (Second Class Upper, Nov 2025)">
+    
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+    :root {
+        --primary: #0f172a;
+        --accent: #f59e0b;
+        --light: #f8fafc;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(rgba(15,23,42,0.94), rgba(15,23,42,0.97)), url('m7.png') center/cover fixed;
+        color: #e2e8f0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-        /* Navigation */
-        nav {
-            background: linear-gradient(135deg, #1a2a44, #2e3b55);
-            color: #fff;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
+    /* Navigation – Consistent with other pages */
+    nav {
+        background: rgba(15,23,42,0.95);
+        backdrop-filter: blur(12px);
+        padding: 1.2rem 0;
+        position: sticky; top:0; z-index:1000;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav .container {
+        max-width: 1200px; margin:0 auto; padding:0 1rem;
+        display: flex; justify-content: space-between; align-items:center;
+    }
+    .logo { height:54px; border-radius:50%; border:3px solid var(--accent); box-shadow:0 0 15px rgba(245,158,11,0.3); }
+    nav h1 {
+        font-size:1.8rem; font-weight:700;
+        background: linear-gradient(90deg, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    nav ul { display:flex; gap:2.5rem; list-style:none; }
+    nav ul a { color:#cbd5e1; text-decoration:none; font-weight:500; position:relative; }
+    nav ul a::after { content:''; position:absolute; bottom:-6px; left:0; width:0; height:2px; background:var(--accent); transition:width 0.3s; }
+    nav ul a:hover { color:var(--accent); }
+    nav ul a:hover::after { width:100%; }
+    .hamburger { display:none; font-size:1.8rem; color:white; background:none; border:none; cursor:pointer; }
 
-        nav .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    /* Services Section */
+    .services-section {
+        flex:1;
+        padding: 5rem 1rem;
+        text-align:center;
+    }
+    .container { max-width:1200px; margin:0 auto; }
+    .page-title {
+        font-size:3.6rem;
+        margin-bottom:1rem;
+        background: linear-gradient(90deg, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .intro {
+        font-size:1.3rem;
+        max-width:900px;
+        margin:1.5rem auto 3rem;
+        color:#cbd5e1;
+        line-height:1.8;
+    }
 
-        .logo {
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 1rem;
-        }
+    /* Services Grid */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+    .service-card {
+        background: rgba(30,41,59,0.7);
+        padding: 2rem;
+        border-radius: 16px;
+        border: 1px solid rgba(251,146,60,0.2);
+        transition: all 0.4s;
+        text-align: left;
+    }
+    .service-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .service-card i {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+    }
+    .service-card h3 {
+        font-size: 1.4rem;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+    .service-card p {
+        font-size: 1rem;
+        color: #94a3b8;
+    }
 
-        nav h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
+    /* Social Media */
+    .social-container {
+        margin-top: 4rem;
+        padding: 2rem;
+        background: rgba(30,41,59,0.7);
+        border-radius: 16px;
+        border: 1px solid rgba(251,146,60,0.2);
+    }
+    .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .social-media a {
+        color: var(--accent);
+        font-size: 2.2rem;
+        transition: all 0.3s;
+    }
+    .social-media a:hover {
+        color: white;
+        transform: scale(1.2);
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
+    footer {
+        background: rgba(15,23,42,0.98);
+        padding: 2.5rem 1rem;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .social-links a {
+        color: #cbd5e1;
+        font-size: 1.8rem;
+        margin: 0 1rem;
+        transition: all 0.3s;
+    }
+    .social-links a:hover { color: var(--accent); transform: translateY(-4px); }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ff9900;
-            transform: scale(1.1);
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .hamburger:hover {
-            color: #ff9900;
-        }
-
-        /* Content Section */
-        .content {
-            flex: 1;
-            padding: 4rem 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-        }
-
-        .content .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .content h1 {
-            font-size: 2.5rem;
-            color: #1a2a44;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            position: relative;
-        }
-
-        .content h1::after {
-            content: "";
-            width: 50px;
-            height: 3px;
-            background: #ff9900;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .content p {
-            font-size: 1.2rem;
-            color: #555;
-            margin: 1rem 0 2rem;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: #ff9900;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.2rem;
-            color: #1a2a44;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Social Media */
-        .social-media-container {
-            margin-top: 3rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-
-        .social-media {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .social-media li a {
-            color: #ff9900;
-            font-size: 2rem;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .social-media li a:hover {
-            color: #1a2a44;
-            transform: scale(1.2);
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #1a2a44, #2e3b55);
-            color: #fff;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        footer .social-links {
-            margin-top: 1rem;
-        }
-
-        footer .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-        }
-
-        footer .social-links a:hover {
-            color: #ff9900;
-        }
-
-        /* Responsive Design with Toggle Menu */
-        @media (max-width: 768px) {
-            nav .container {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            nav ul {
-                display: none; /* Hidden by default */
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                background: linear-gradient(135deg, #1a2a44, #2e3b55);
-                position: absolute;
-                top: 100%;
-                left: 0;
-                padding: 1rem;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            }
-
-            nav ul.active {
-                display: flex; /* Shown when toggled */
-            }
-
-            nav ul li {
-                width: 100%;
-                text-align: left;
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 0.5rem 0;
-            }
-
-            .content h1 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .social-media li a {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-</head>
+    @media (max-width:768px){
+        .hamburger{display:block;}
+        nav ul{position:absolute; top:100%; left:0; width:100%; background:var(--primary);
+                flex-direction:column; padding:1.5rem 0; display:none; border-top:1px solid rgba(255,255,255,0.1);}
+        nav ul.active{display:flex;}
+        nav ul a{padding:1rem 2rem;}
+        .page-title{font-size:2.8rem;}
+        .intro{font-size:1.15rem;}
+        .service-card{text-align:center;}
+        .social-media a{font-size:1.8rem;}
+    }
+</style></head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div style="display: flex; align-items: center;">
-                <img src="logo.png" alt="Julius Bett Logo" class="logo">
-                <h1>Julius Bett</h1>
+<nav>
+    <div class="container">
+        <div style="display:flex; align-items:center; gap:14px;">
+            <img src="logo.png" alt="Julius Bett" class="logo">
+            <h1>Julius Bett</h1>
+        </div>
+        <button class="hamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="services-section">
+    <div class="container">
+        <h1 class="page-title">My Services</h1>
+        <p class="intro">
+            As a recent <strong>B.Ed Science graduate (Second Class Honours Upper Division, Nov 2025)</strong> and qualified teacher in Computer Studies & Mathematics, I offer specialized educational and tech services. From KCSE projects to web development and efficient online government applications — all delivered with professionalism and 100% originality.
+        </p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-book-open"></i>
+                <h3>Research Proposals</h3>
+                <p>Expert guidance for academic and project proposals.</p>
             </div>
-            <button class="hamburger" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-                <li><a href="services.html">Services</a></li>
+            <div class="service-card">
+                <i class="fas fa-pen"></i>
+                <h3>Assignments</h3>
+                <p>High-quality, original academic assignments.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Thesis Writing</h3>
+                <p>Comprehensive support for thesis development.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>Synopsis & Reports</h3>
+                <p>Detailed synopses and research reports.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-newspaper"></i>
+                <h3>Papers & Essays</h3>
+                <p>Well-researched papers and essays.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-table"></i>
+                <h3>Excel Assistance</h3>
+                <p>Advanced Excel solutions for data management.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-folder-open"></i>
+                <h3>Project & Internship Reports</h3>
+                <p>Professional reports for projects and internships.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Formatting Services</h3>
+                <p>Expert document formatting.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>KCSE Computer Projects</h3>
+                <p>Development and guidance for KCSE computer projects.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-university"></i>
+                <h3>KUCCPS Applications</h3>
+                <p>Assistance with KUCCPS applications and revisions.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-car"></i>
+                <h3>Car Ownership Transfer</h3>
+                <p>Efficient online car transfer services.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <h3>KRA Services</h3>
+                <p>All KRA-related online services.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-passport"></i>
+                <h3>Passport Applications</h3>
+                <p>Streamlined passport application support.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-globe"></i>
+                <h3>Other Online Services</h3>
+                <p>Custom online government and digital services.</p>
+            </div>
+        </div>
+
+        <p class="intro" style="margin-top:3rem;">
+            Ready to get started? Contact me via my <a href="contact.html" style="color:var(--accent); text-decoration:none; font-weight:600;">Contact Page</a> or social media below.
+        </p>
+
+        <div class="social-container">
+            <ul class="social-media">
+                <li><a href="https://wa.me/254707315958" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="https://www.facebook.com/julie.jully.161" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://x.com/JulieJully2" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/julie.jully.161" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/messaging" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.tiktok.com/@mr.bett_developer1?_t=8rDwXYmMTQd&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
             </ul>
         </div>
-    </nav>
-
-    <!-- Content Section -->
-    <div class="content">
-        <div class="container">
-            <h1>🌟 Professional Services 🌟</h1>
-            <p>Welcome to my comprehensive service offerings! I provide high-quality academic assistance, government-related online services, and more—all tailored to your needs with 100% originality. My services include:</p>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Research Proposals</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-pen"></i>
-                    <h3>Assignments</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Thesis Writing</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Synopsis & Research Reports</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-newspaper"></i>
-                    <h3>Research Papers & Essays</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-table"></i>
-                    <h3>Excel Assistance</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-folder-open"></i>
-                    <h3>Project Reports & Internship Reports</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Professional Formatting</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>KCSE Computer Project Development</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-university"></i>
-                    <h3>KUCCPS Application & Revision</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-car"></i>
-                    <h3>Car Ownership Transfer</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <h3>All KRA Services</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-passport"></i>
-                    <h3>Passport Application</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>Other Online Services</h3>
-                </div>
-            </div>
-
-            <p>Let’s work together to meet your goals—academic or otherwise! Reach out via social media or my <a href="contact.html" style="color: #ff9900; text-decoration: none;">Contact Page</a>.</p>
-
-            <!-- Social Media -->
-            <div class="social-media-container">
-                <ul class="social-media">
-                    <li><a href="https://wa.me/254707315958" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></li>
-                    <li><a href="https://www.facebook.com/julie.jully.161" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://x.com/JulieJully2" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/julie.jully.161" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="https://www.linkedin.com/messaging" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="https://www.tiktok.com/@mr.bett_developer1?_t=8rDwXYmMTQd&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
-                </ul>
-            </div>
-        </div>
     </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Julius Bett. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-    </footer>
+<footer>
+    <p>© 2025–2026 Julius Bett. All Rights Reserved.</p>
+    <div class="social-links">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:your.email@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+</footer>
 
-    <script>
-        // Toggle navigation menu
-        const hamburger = document.querySelector(".hamburger");
-        const navUl = document.querySelector("nav ul");
-
-        hamburger.addEventListener("click", () => {
-            navUl.classList.toggle("active");
+<script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+        document.querySelector('nav ul').classList.toggle('active');
+    });
+    document.querySelectorAll('nav ul a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('nav ul').classList.remove('active');
         });
-
-        // Close menu when a link is clicked
-        navUl.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                navUl.classList.remove("active");
-            });
-        });
-    </script>
-</body>
+    });
+</script></body>
 </html>
+
