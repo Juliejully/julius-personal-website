@@ -125,20 +125,18 @@
         /* ────────────────────────────────────────────────
            MOBILE MENU – LEFT-ALIGNED DOWNWARD
         ──────────────────────────────────────────────── */
-        @media (max-width: 768px) {
+         @media (max-width: 768px) {
             .hamburger { display: block; }
             nav ul {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--primary);
-                flex-direction: column;
-                align-items: flex-start;           /* ← left align */
-                padding: 1.5rem 0 2rem 2rem;       /* ← left padding for left-side feel */
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--primary); flex-direction: column; padding: 1.5rem 0;
                 display: none;
-                border-bottom: 1px solid rgba(245,158,11,0.1);
             }
+            nav ul.active { display: flex; }
+            nav ul a { padding: 1rem 2rem; font-size: 1.2rem; }
+            .page-title { font-size: 3rem; }
+            .intro, .philosophy { font-size: 1.2rem; }
+            .timeline { gap: 1.8rem; }
             nav ul.active {
                 display: flex;
             }
@@ -274,3 +272,4 @@
     </script>
 </body>
 </html>
+
