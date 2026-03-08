@@ -37,16 +37,21 @@ box-sizing:border-box;
 
 body{
 font-family:'Inter',system-ui,sans-serif;
-background:linear-gradient(rgba(15,23,42,0.96),rgba(15,23,42,0.98)),url('m7.png') center/cover fixed;
+background:
+linear-gradient(rgba(15,23,42,0.96),rgba(15,23,42,0.98)),
+url('m7.png') center/cover no-repeat;
+background-attachment:fixed;
 color:var(--text);
 min-height:100vh;
 line-height:1.6;
 }
 
 .container{
+width:100%;
 max-width:1200px;
-margin:0 auto;
-padding:0 1.5rem;
+margin:auto;
+padding-left:clamp(1rem,4vw,2rem);
+padding-right:clamp(1rem,4vw,2rem);
 }
 
 /* NAV */
@@ -81,7 +86,7 @@ gap:1rem;
 }
 
 nav h1{
-font-size:1.9rem;
+font-size:clamp(1.4rem,3vw,1.9rem);
 font-weight:800;
 background:linear-gradient(90deg,#fff,var(--accent));
 -webkit-background-clip:text;
@@ -141,7 +146,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:5rem 1rem 8rem;
+padding:clamp(4rem,8vw,6rem) 1rem;
 }
 
 .hero-content{
@@ -170,7 +175,7 @@ box-shadow:0 6px 20px rgba(245,158,11,.35);
 
 .hero h1{
 font-family:'Playfair Display',serif;
-font-size:4.2rem;
+font-size:clamp(2.3rem,6vw,4.2rem);
 font-weight:800;
 margin:.8rem 0;
 line-height:1.05;
@@ -181,14 +186,14 @@ color:var(--accent);
 }
 
 .degree{
-font-size:2.1rem;
+font-size:clamp(1.3rem,3vw,2.1rem);
 margin:1.2rem 0;
 color:var(--text-muted);
 font-weight:500;
 }
 
 .hero p{
-font-size:1.4rem;
+font-size:clamp(1rem,2.5vw,1.4rem);
 max-width:780px;
 margin:1.8rem auto;
 color:var(--text-muted);
@@ -208,10 +213,10 @@ margin:3rem 0 1rem;
 }
 
 .button{
-padding:1rem 2.6rem;
+padding:clamp(.8rem,2vw,1rem) clamp(1.6rem,4vw,2.6rem);
 border-radius:999px;
 font-weight:600;
-font-size:1.15rem;
+font-size:clamp(.9rem,2vw,1.15rem);
 text-decoration:none;
 transition:all .4s cubic-bezier(.22,1,.36,1);
 }
@@ -245,14 +250,14 @@ background:rgba(0,0,0,.2);
 
 .highlights h2{
 text-align:center;
-font-size:3rem;
+font-size:clamp(2rem,5vw,3rem);
 margin-bottom:4rem;
 font-weight:700;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:2rem;
 }
 
@@ -340,18 +345,6 @@ padding:1rem;
 font-size:1.2rem;
 }
 
-.hero h1{
-font-size:3rem;
-}
-
-.degree{
-font-size:1.7rem;
-}
-
-.hero p{
-font-size:1.2rem;
-}
-
 .buttons{
 flex-direction:column;
 gap:1.2rem;
@@ -364,13 +357,26 @@ max-width:360px;
 
 }
 
+/* LARGE SCREENS */
+
+@media(min-width:1600px){
+
+.container{
+max-width:1400px;
+}
+
+.hero-content{
+max-width:1100px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
-
 <div class="container">
 
 <div class="brand">
@@ -383,13 +389,11 @@ max-width:360px;
 </button>
 
 <ul>
-
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="skills.html">Skills & Projects</a></li>
 <li><a href="services.html">Services</a></li>
 <li><a href="contact.html">Contact</a></li>
-
 </ul>
 
 </div>
@@ -477,8 +481,6 @@ Ready to teach, inspire & build →
 
 <script>
 
-/* Typed text */
-
 new Typed('#typed',{
 strings:[
 'Computer Studies Teacher',
@@ -493,8 +495,6 @@ backDelay:1800,
 loop:true
 });
 
-/* MOBILE MENU */
-
 const hamburger=document.querySelector(".hamburger");
 const navMenu=document.querySelector("nav ul");
 
@@ -502,23 +502,17 @@ hamburger.addEventListener("click",()=>{
 navMenu.classList.toggle("active");
 });
 
-/* close menu when link clicked */
-
 document.querySelectorAll("nav ul a").forEach(link=>{
 link.addEventListener("click",()=>{
 navMenu.classList.remove("active");
 });
 });
 
-/* close menu if clicking outside */
-
 document.addEventListener("click",(e)=>{
 if(!hamburger.contains(e.target) && !navMenu.contains(e.target)){
 navMenu.classList.remove("active");
 }
 });
-
-/* Scroll animation */
 
 const cards=document.querySelectorAll('.card');
 
