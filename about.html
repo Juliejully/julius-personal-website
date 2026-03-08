@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julius Bett | Computer Studies & Mathematics Teacher | Web Developer</title>
-    <meta name="description" content="Julius Bett – B.Ed Science (2:1 Upper Division, Nov 2025) | BOM Teacher in Computer Studies & Mathematics at St. John Tachasis Mixed Day Secondary School, Nandi County | TSC-ready | Full-Stack Web Developer.">
-    
-    <!-- Open Graph for better sharing -->
-    <meta property="og:title" content="Julius Bett - Educator & Web Developer">
-    <meta property="og:description" content="Currently teaching Computer Studies & Mathematics at St. John Tachasis Mixed Day Sec. School (Nandi County) | Passionate about ICT in education and digital solutions.">
-    <meta property="og:image" content="your-og-image.jpg"> <!-- Replace with a professional photo -->
+    <title>About Me - Julius Bett | Computer Studies & Mathematics Teacher</title>
+    <meta name="description" content="Julius Bett – B.Ed Science (2:1 Upper Division, Nov 2025) | Current BOM Teacher in Computer Studies & Mathematics at St. John Tachasis Mixed Day Secondary School, Nandi County | TSC-ready | Full-Stack Web Developer passionate about ICT in education.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +16,7 @@
         :root {
             --primary: #0f172a;
             --accent: #f59e0b;
-            --light: #f8fafc;
+            --glass: rgba(30,41,59,0.65);
             --text: #e2e8f0;
             --text-muted: #cbd5e1;
         }
@@ -52,70 +47,106 @@
             -webkit-text-fill-color: transparent;
         }
         nav ul { display: flex; gap: 2.8rem; list-style: none; }
-        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; position: relative; transition: color 0.3s; }
-        nav a::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 2.5px; background: var(--accent); transition: width 0.35s ease; }
+        nav a {
+            color: var(--text-muted); text-decoration: none; font-weight: 500;
+            position: relative; transition: color 0.3s;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 2.5px;
+            background: var(--accent); transition: width 0.35s ease;
+        }
         nav a:hover { color: white; }
         nav a:hover::after { width: 100%; }
         .hamburger { display: none; font-size: 2rem; color: white; background: none; border: none; cursor: pointer; }
 
-        .hero { min-height: 92vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 5rem 1rem 8rem; }
-        .hero-content { max-width: 960px; animation: fadeUp 1.2s ease-out; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
-
+        .about-section { flex: 1; padding: 6rem 1rem 8rem; text-align: center; }
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem; font-weight: 800;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
         .badge {
             display: inline-flex; align-items: center; gap: 0.6rem;
             background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white; padding: 0.7rem 1.5rem; border-radius: 999px;
-            font-weight: 600; font-size: 1rem; margin-bottom: 1.5rem;
+            color: white; padding: 0.8rem 1.6rem; border-radius: 999px;
+            font-weight: 600; font-size: 1.05rem; margin: 1.2rem 0 2rem;
             box-shadow: 0 6px 20px rgba(245,158,11,0.35);
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.2rem; font-weight: 800; margin: 0.8rem 0; line-height: 1.05; }
-        .hero h1 span { color: var(--accent); }
-        .degree { font-size: 2.1rem; margin: 1.2rem 0; color: var(--text-muted); font-weight: 500; }
-        .hero p { font-size: 1.4rem; max-width: 780px; margin: 1.8rem auto; color: var(--text-muted); }
-        .current-role { font-size: 1.5rem; color: var(--accent); font-weight: 600; margin: 1rem 0; }
-        .typed-text { color: var(--accent); font-weight: 700; }
-
-        .buttons { display: flex; gap: 1.8rem; justify-content: center; flex-wrap: wrap; margin: 3rem 0 1rem; }
-        .button {
-            padding: 1rem 2.6rem; border-radius: 999px; font-weight: 600; font-size: 1.15rem;
-            text-decoration: none; transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+        .intro, .philosophy {
+            font-size: 1.35rem; max-width: 820px; margin: 0 auto 2.5rem;
+            line-height: 1.8; color: var(--text-muted);
         }
-        .btn-primary { background: linear-gradient(135deg, var(--accent), #d97706); color: white; }
-        .btn-secondary { border: 2.5px solid var(--accent); color: white; }
-        .button:hover { transform: translateY(-6px) scale(1.04); box-shadow: 0 14px 32px rgba(245,158,11,0.4); }
-        .btn-secondary:hover { background: var(--accent); border-color: transparent; }
+        .philosophy { font-style: italic; color: #94a3b8; margin-top: 1rem; }
 
-        .highlights { padding: 6rem 1rem 8rem; background: rgba(0,0,0,0.2); }
-        .highlights h2 { text-align: center; font-size: 3rem; margin-bottom: 4rem; font-weight: 700; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.2rem;
+            margin-top: 3rem;
+        }
         .card {
-            background: rgba(30,41,59,0.6); backdrop-filter: blur(10px);
-            border: 1px solid rgba(245,158,11,0.15); border-radius: 1.2rem;
-            padding: 2.2rem; transition: all 0.4s;
-            opacity: 0; transform: translateY(30px);
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245,158,11,0.18);
+            border-radius: 1.4rem;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+            opacity: 0; transform: translateY(40px);
         }
-        .card.visible { opacity: 1; transform: translateY(0); transition: all 0.8s ease; }
-        .card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--accent); }
-        .card p { color: var(--text-muted); }
+        .card.visible {
+            opacity: 1; transform: translateY(0);
+        }
+        .card:hover {
+            transform: translateY(-14px);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(245,158,11,0.15) inset;
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+            max-height: 55vh;
+            object-fit: contain;
+            background: #1e293b;
+            padding: 10px;
+            transition: transform 0.5s ease;
+        }
+        .card:hover .card-image { transform: scale(1.04); }
+        .card-content { padding: 2rem 1.8rem; }
+        .card h3 {
+            font-size: 1.65rem; margin-bottom: 1.1rem;
+            color: var(--accent); font-weight: 700;
+        }
+        .card p { color: var(--text-muted); line-height: 1.7; }
 
-        footer { background: rgba(15,23,42,0.98); padding: 3rem 1rem; text-align: center; border-top: 1px solid rgba(245,158,11,0.1); }
-        .social-links a { color: var(--text-muted); font-size: 2rem; margin: 0 1.4rem; transition: all 0.3s; }
+        footer {
+            background: rgba(15,23,42,0.98); padding: 3rem 1rem;
+            text-align: center; border-top: 1px solid rgba(245,158,11,0.1);
+        }
+        .social-links a {
+            color: var(--text-muted); font-size: 2rem; margin: 0 1.4rem;
+            transition: all 0.3s;
+        }
         .social-links a:hover { color: var(--accent); transform: translateY(-5px) scale(1.15); }
 
         @media (max-width: 768px) {
             .hamburger { display: block; }
-            nav ul { position: absolute; top: 100%; left: 0; width: 100%; background: var(--primary); flex-direction: column; padding: 1.5rem 0; display: none; }
+            nav ul {
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--primary); flex-direction: column; padding: 1.5rem 0;
+                display: none;
+            }
             nav ul.active { display: flex; }
             nav ul a { padding: 1rem 2rem; font-size: 1.2rem; }
-            .hero h1 { font-size: 3.2rem; }
-            .degree { font-size: 1.8rem; }
-            .hero p { font-size: 1.25rem; }
-            .buttons { flex-direction: column; gap: 1.2rem; }
-            .button { width: 100%; max-width: 360px; }
+            .page-title { font-size: 3rem; }
+            .intro, .philosophy { font-size: 1.2rem; }
+            .timeline { gap: 1.8rem; }
         }
 
-        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; transform: none !important; } }
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; transform: none !important; }
+        }
     </style>
 </head>
 <body>
@@ -137,47 +168,53 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="badge">
-                <i class="fas fa-graduation-cap"></i> B.Ed Science – 2:1 Upper Division – Nov 2025
-            </div>
-            <h1>Hello! I'm <span>Julius Bett</span></h1>
-            <div class="degree">Bachelor of Education Science<br><strong>Second Class Honours (Upper Division)</strong></div>
-            <p>
-                TSC-registerable Senior Secondary Teacher specializing in <strong>Computer Studies</strong> & <strong>Mathematics</strong><br>
-                Currently serving as BOM Teacher at St. John Tachasis Mixed Day Secondary School (Tinderet, Nandi County)<br>
-                Passionate about ICT integration in education + Full-Stack Web Developer building modern tools for learning & institutions.
-            </p>
-            <div class="current-role">
-                Teaching in a high-performing school with ~9.08 mean KCSE score & 100% university transition (2025 results)
-            </div>
-            <p style="font-size:1.7rem; margin:2.5rem 0; min-height:2.4rem;">
-                Inspiring students in STEM → <span class="typed-text" id="typed"></span>
-            </p>
-
-            <div class="buttons">
-                <a href="contact.html" class="button btn-primary">Get in Touch / Hire Me</a>
-                <a href="skills.html" class="button btn-secondary">View Skills & Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="highlights">
+    <section class="about-section">
         <div class="container">
-            <h2>Quick Highlights</h2>
-            <div class="cards">
+            <h1 class="page-title">About Me</h1>
+            <div class="badge">
+                <i class="fas fa-chalkboard-teacher"></i> BOM Teacher – Computer Studies & Mathematics
+            </div>
+            <p class="intro">
+                I am a dedicated, TSC-registerable Senior Secondary Teacher specializing in <strong>Computer Studies</strong> and <strong>Mathematics</strong>. 
+                With a recent B.Ed Science degree and practical full-stack web development skills, I actively integrate modern ICT tools into classroom teaching to create engaging, future-ready learning experiences for students.
+            </p>
+            <p class="philosophy">
+                “I believe in empowering every student with strong STEM foundations, practical coding skills, and critical thinking — using technology to make complex concepts accessible and inspiring lifelong curiosity.”
+            </p>
+
+            <div class="timeline">
+                <!-- Current role first for prominence -->
                 <div class="card">
-                    <h3>Current Teaching Role</h3>
-                    <p>BOM Teacher – Computer Studies & Mathematics<br>St. John Tachasis Mixed Day Secondary School, Nandi County<br>Delivering engaging lessons in a school celebrated for academic excellence (2025 KCSE: mean ~9.08, 100% university transition).</p>
+                    <img src="school-photo.jpg" alt="St. John Tachasis Mixed Day Secondary School – Current Teaching" class="card-image">
+                    <!-- Replace school-photo.jpg with your actual image if available; otherwise remove <img> or use a placeholder -->
+                    <div class="card-content">
+                        <h3>2026 – Present<br>St. John Tachasis Mixed Day Secondary School</h3>
+                        <p>BOM Teacher – Computer Studies & Mathematics<br>Tinderet Sub-County, Nandi County<br>Teaching in a high-performing school that achieved a mean KCSE score of 9.08 (B plain) in 2025, with 100% university transition (all 332 candidates C+ and above). Focusing on practical programming, digital literacy, ICT integration, and mathematics application for real-world problem-solving.</p>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <h3>Education Background</h3>
-                    <p>B.Ed Science (Computer Studies & Mathematics)<br>Kibabii University – Graduated Nov 2025 with Second Class Honours (Upper Division)<br>TSC-ready and passionate about future-ready STEM education.</p>
+                    <img src="m5.jpg" alt="Kibabii University Graduation – Degree Achievement" class="card-image">
+                    <div class="card-content">
+                        <h3>2021 – 2025<br>Kibabii University</h3>
+                        <p>Bachelor of Education Science (Computer Studies & Mathematics)<br>Graduated 21st November 2025 with Second Class Honours (Upper Division)<br>Equipped with strong pedagogical skills and readiness for TSC registration.</p>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <h3>Web Development</h3>
-                    <p>Full-stack developer (PHP, MySQL, JavaScript, etc.)<br>Building school management systems, e-learning platforms, and ICT tools to support modern classrooms and administration.</p>
+                    <img src="m1.jpg" alt="Meteitei Boys High School – Early Foundation" class="card-image">
+                    <div class="card-content">
+                        <h3>2017 – 2020<br>Meteitei Boys High School</h3>
+                        <p>Strong performance in Computer Studies and Mathematics<br>Discovered passion for programming, algorithms, and using technology to explain abstract concepts effectively.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="m4.jpg" alt="Web Development & Tech Skills" class="card-image">
+                    <div class="card-content">
+                        <h3>Ongoing<br>Web Development & ICT Innovation</h3>
+                        <p>Full-stack developer proficient in PHP, MySQL, JavaScript, responsive design<br>Creating educational tools like school management systems, e-learning platforms, and automation solutions to support modern teaching and school administration.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,7 +222,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025–2026 Julius Bett. All Rights Reserved. Built with passion for education & technology.</p>
+            <p>© 2025–2026 Julius Bett. All Rights Reserved. Built with passion for education and technology.</p>
             <div class="social-links">
                 <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -194,18 +231,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0"></script>
     <script>
-        new Typed('#typed', {
-            strings: ['Computer Studies Teacher', 'Mathematics Educator', 'BOM Teacher – St. John Tachasis', 'ICT Integration Specialist', 'Full-Stack Developer'],
-            typeSpeed: 80,
-            backSpeed: 45,
-            backDelay: 1800,
-            loop: true,
-            smartBackspace: true
-        });
-
-        // Hamburger menu
+        // Hamburger menu toggle
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('nav ul').classList.toggle('active');
         });
@@ -213,15 +240,16 @@
             a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('active'));
         });
 
-        // Scroll reveal for cards
+        // Scroll reveal animation for cards
         const cards = document.querySelectorAll('.card');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Reveal once
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
         cards.forEach(card => observer.observe(card));
     </script>
